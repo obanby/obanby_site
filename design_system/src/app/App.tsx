@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs";
+import { Tabs, TabsContent } from "@/app/components/ui/tabs";
 import { DesignSystemShowcase } from "@/app/components/DesignSystemShowcase";
+import { NavigationTabs } from "@/app/components/NavigationTabs";
 import { BlogHeader } from "@/app/components/BlogHeader";
 import { HeroSection } from "@/app/components/HeroSection";
 import { FeaturedWork } from "@/app/components/FeaturedWork";
@@ -17,38 +18,7 @@ export default function App() {
   return (
     <div className="min-h-screen">
       {/* Navigation Tabs - Sticky */}
-      <div className="sticky top-0 z-50 bg-background border-b-2 border-foreground">
-        <div className="container-content">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="w-full justify-start h-14 bg-transparent rounded-none border-0 p-0">
-              <TabsTrigger 
-                value="home" 
-                className="data-[state=active]:bg-foreground data-[state=active]:text-background rounded-none h-full px-6"
-              >
-                Blog Home
-              </TabsTrigger>
-              <TabsTrigger 
-                value="article" 
-                className="data-[state=active]:bg-foreground data-[state=active]:text-background rounded-none h-full px-6"
-              >
-                Article Example
-              </TabsTrigger>
-              <TabsTrigger 
-                value="design" 
-                className="data-[state=active]:bg-foreground data-[state=active]:text-background rounded-none h-full px-6"
-              >
-                Components
-              </TabsTrigger>
-              <TabsTrigger 
-                value="projects" 
-                className="data-[state=active]:bg-foreground data-[state=active]:text-background rounded-none h-full px-6"
-              >
-                Projects
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </div>
-      </div>
+      <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
       {/* Content */}
       <Tabs value={activeTab} className="w-full">

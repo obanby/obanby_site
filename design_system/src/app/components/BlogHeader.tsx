@@ -12,21 +12,8 @@ export function BlogHeader() {
             </h3>
           </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-12">
-            <a href="#" className="border-b-0 hover:accent-red transition-colors">
-              Writing
-            </a>
-            <a href="#" className="border-b-0 hover:accent-blue transition-colors">
-              Projects
-            </a>
-            <a href="#" className="border-b-0 hover:text-muted-foreground transition-colors">
-              About
-            </a>
-          </nav>
-
-          {/* CTA */}
-          <Button variant="ghost" className="hidden md:block">
+          {/* Subscribe CTA */}
+          <Button variant="ghost">
             Subscribe
           </Button>
         </div>
