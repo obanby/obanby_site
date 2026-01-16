@@ -300,6 +300,8 @@ function Component({ className, variant, ...props }) {
 - `BlogGrid` - Responsive grid of article cards
 - `FeaturedWork` - Project showcase with large images
 - `CTASection` - Newsletter signup with form
+- `CodeBlock` - Code display with syntax highlighting, line numbers, and language labels
+- `Callout` - Info/warning/error blocks with icons and variants
 
 ### Radix UI Components (50+)
 
@@ -328,6 +330,194 @@ All components follow the same pattern:
 - CVA for variants
 - Tailwind for styling
 - Design tokens for theming
+
+---
+
+## 💻 CodeBlock Component
+
+Display code with brutalist styling, optional syntax highlighting, and line numbers.
+
+### Variants
+
+**Default (Inverted):**
+```tsx
+<CodeBlock language="typescript">
+{`const greeting: string = "Hello, World!";
+console.log(greeting);`}
+</CodeBlock>
+```
+Black background with white text - maximum contrast for code.
+
+**Outline:**
+```tsx
+<CodeBlock variant="outline" language="javascript">
+{`function add(a, b) {
+  return a + b;
+}`}
+</CodeBlock>
+```
+White background with black text and 2px border.
+
+**Minimal:**
+```tsx
+<CodeBlock variant="minimal">
+{`npm install package-name
+npm run dev`}
+</CodeBlock>
+```
+Minimal styling with left border accent - perfect for terminal commands.
+
+### Features
+
+**Line Numbers:**
+```tsx
+<CodeBlock language="python" showLineNumbers>
+{`def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)`}
+</CodeBlock>
+```
+
+**Language Label:**
+The language prop automatically adds a label in the top-right corner.
+
+### Usage in Articles
+
+```tsx
+<article className="container-reading space-y-6">
+  <h2>Installation</h2>
+  <p>Install the package using npm:</p>
+
+  <CodeBlock variant="minimal">
+    npm install my-package
+  </CodeBlock>
+
+  <h2>Usage</h2>
+  <p>Import and use the component:</p>
+
+  <CodeBlock language="tsx" showLineNumbers>
+{`import { MyComponent } from 'my-package';
+
+export function App() {
+  return <MyComponent />;
+}`}
+  </CodeBlock>
+</article>
+```
+
+---
+
+## 📢 Callout Component
+
+Info, warning, and alert blocks with brutalist styling and selective accent colors.
+
+### Variants
+
+**Default:**
+```tsx
+<Callout>
+  This is a default callout for general information.
+</Callout>
+```
+Black border, neutral styling.
+
+**Info (Blue Accent):**
+```tsx
+<Callout variant="info" title="Information">
+  Use this for helpful tips and informational notes.
+</Callout>
+```
+Blue left border accent - perfect for tips and notes.
+
+**Warning (Red Accent):**
+```tsx
+<Callout variant="warning" title="Warning">
+  Use this to indicate caution or important notices.
+</Callout>
+```
+Red left border accent - draws attention without overwhelming.
+
+**Error (Inverted Red):**
+```tsx
+<Callout variant="error" title="Error">
+  Use this for critical alerts and error messages.
+</Callout>
+```
+Red background with white text - maximum urgency.
+
+**Success (Inverted Black):**
+```tsx
+<Callout variant="success" title="Success">
+  Use this to confirm successful operations.
+</Callout>
+```
+Black background with white text - bold confirmation.
+
+### Customization
+
+**Custom Icon:**
+```tsx
+<Callout icon="★" variant="info" title="Pro Tip">
+  Pass any emoji or character as the icon prop.
+</Callout>
+```
+
+**No Icon:**
+```tsx
+<Callout icon={null} title="No Icon">
+  Pass icon={null} to remove the icon entirely.
+</Callout>
+```
+
+**No Title:**
+```tsx
+<Callout variant="info">
+  Omit the title prop for a simpler callout.
+</Callout>
+```
+
+### Design Philosophy
+
+Callouts follow the brutalist-minimal aesthetic:
+- **Bold borders** (2px) for strong visual presence
+- **Selective color** - Only info (blue) and warning (red) use accents
+- **Clear hierarchy** - Icon, title, content
+- **Generous padding** - 1rem (16px) for breathing room
+- **Sharp corners** - 0px border radius
+
+**Usage Guidelines:**
+- Use sparingly (2-3 per page maximum)
+- Reserve red for genuine warnings/errors
+- Use blue for helpful tips and information
+- Keep content concise (2-3 sentences)
+- Callouts should enhance, not replace, content
+
+### Usage in Articles
+
+```tsx
+<article className="container-reading space-y-6">
+  <h1>Getting Started</h1>
+
+  <p>This guide will help you set up the project.</p>
+
+  <Callout variant="info" title="Prerequisites">
+    Make sure you have Node.js 18+ and npm installed.
+  </Callout>
+
+  <h2>Installation</h2>
+
+  <CodeBlock variant="minimal">
+    npm install
+  </CodeBlock>
+
+  <Callout variant="warning" title="Breaking Change">
+    Version 2.0 introduces breaking changes. Review the migration guide.
+  </Callout>
+
+  <p>Continue with the setup...</p>
+</article>
+```
 
 ---
 
