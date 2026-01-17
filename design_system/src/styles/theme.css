@@ -26,27 +26,15 @@
     --muted: #F0F0ED;
     --muted-foreground: #6B6B68;
 
-    /* Accent Red - Bold statements */
-    --accent-red: #000000;
-    --accent-red-foreground: #FFFFFF;
-
-    /* Accent Blue - Creative highlights */
-    --accent-blue: #000000;
-    --accent-blue-foreground: #FFFFFF;
-
-    /* Accent Yellow - Optional highlight */
+    /* Accent Yellow - Text highlighting */
     --accent-yellow: #FFEB3B;
-    --accent-yellow-foreground: #000000;
+    --accent-yellow-foreground: #0A0A0A;
 
-    /* Warning Yellow - For callouts and alerts */
+    /* Warning - For callouts and alerts */
     --warning: #F59E0B;
-    --warning-foreground: #000000;
+    --warning-foreground: #0A0A0A;
 
-    /* Accent Highlight Blue - Highlighter pen */
-    --accent-highlight-blue: #66B3FF;
-    --accent-highlight-blue-foreground: #000000;
-
-    /* Accent - Default to subtle */
+    /* Accent - Subtle backgrounds */
     --accent: #F5F5F0;
     --accent-foreground: #0A0A0A;
 
@@ -126,26 +114,17 @@
     --primary: #FFFFFF;
     --primary-foreground: #000000;
 
-    --secondary: #1A1A1A;
+    --secondary: #B84A5A;
     --secondary-foreground: #FFFFFF;
 
     --muted: #1A1A1A;
     --muted-foreground: #999999;
 
-    --accent-red: #FF1744;
-    --accent-red-foreground: #FFFFFF;
+    --accent-yellow: #FFF59D;
+    --accent-yellow-foreground: #0A0A0A;
 
-    --accent-blue: #5E5EFF;
-    --accent-blue-foreground: #FFFFFF;
-
-    --accent-yellow: #FFEB3B;
-    --accent-yellow-foreground: #000000;
-
-    --warning: #F59E0B;
-    --warning-foreground: #000000;
-
-    --accent-highlight-blue: #66B3FF;
-    --accent-highlight-blue-foreground: #000000;
+    --warning: #FDB022;
+    --warning-foreground: #0A0A0A;
 
     --accent: #1A1A1A;
     --accent-foreground: #FFFFFF;
@@ -184,16 +163,10 @@
     --color-muted-foreground: var(--muted-foreground);
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
-    --color-accent-red: var(--accent-red);
-    --color-accent-red-foreground: var(--accent-red-foreground);
-    --color-accent-blue: var(--accent-blue);
-    --color-accent-blue-foreground: var(--accent-blue-foreground);
     --color-accent-yellow: var(--accent-yellow);
     --color-accent-yellow-foreground: var(--accent-yellow-foreground);
     --color-warning: var(--warning);
     --color-warning-foreground: var(--warning-foreground);
-    --color-accent-highlight-blue: var(--accent-highlight-blue);
-    --color-accent-highlight-blue-foreground: var(--accent-highlight-blue-foreground);
     --color-destructive: var(--destructive);
     --color-destructive-foreground: var(--destructive-foreground);
     --color-border: var(--border);
@@ -345,38 +318,6 @@
 
 /* Utility Classes for Design System */
 @layer utilities {
-    .accent-red {
-        color: var(--accent-red);
-    }
-
-    .bg-accent-red {
-        background-color: var(--accent-red);
-        color: var(--accent-red-foreground);
-    }
-
-    .accent-blue {
-        color: var(--accent-blue);
-    }
-
-    .bg-accent-blue {
-        background-color: var(--accent-blue);
-        color: var(--accent-blue-foreground);
-    }
-
-    .accent-yellow {
-        color: var(--accent-yellow);
-    }
-
-    .bg-accent-yellow {
-        background-color: var(--accent-yellow);
-        color: var(--accent-yellow-foreground);
-    }
-
-    .bg-accent-highlight-blue {
-        background-color: var(--accent-highlight-blue);
-        color: var(--accent-highlight-blue-foreground);
-    }
-
     .border-strong {
         border-color: var(--border-strong);
     }

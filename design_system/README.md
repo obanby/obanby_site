@@ -1,6 +1,6 @@
-# Brutalist-Minimal Design System
+# Warm Editorial Design System
 
-A production-ready design system built with **React 18**, **Tailwind CSS v4**, and **Radix UI**. Featuring a brutalist-minimal aesthetic with 50+ pre-styled components, comprehensive theming, and interactive component documentation via Ladle.
+A production-ready design system built with **React 18**, **Tailwind CSS v4**, and **Radix UI**. Featuring a warm, sophisticated editorial aesthetic with 50+ pre-styled components, comprehensive theming, and interactive component documentation via Ladle.
 
 ---
 
@@ -29,36 +29,57 @@ npm run build-ladle  # Build Ladle documentation
 
 ## 🎨 Design Philosophy
 
-### The Brutalist-Minimal Approach
+### Warm Editorial Aesthetic
 
-This design system blends two seemingly opposing philosophies:
+This design system combines editorial sophistication with technical precision, creating a refined yet approachable aesthetic for content-focused sites.
 
-#### **Brutalist Elements**
-- **Bold, Unapologetic Typography**: 900-weight headings that demand attention
-- **Sharp Geometry**: 0px border radius, no softness
-- **Heavy Borders**: 2px borders for emphasis and structure
-- **Raw Contrast**: Pure black (#000000) on pure white (#FFFFFF)
-- **No Decorative Elements**: No shadows, gradients, or visual flourishes
+#### **Core Principles**
 
-#### **Minimalist Principles**
-- **Generous Negative Space**: Breathing room is a design feature
-- **Restrained Color Palette**: 95% monochrome, 5% accent
-- **Functional Simplicity**: Every element serves a purpose
-- **Clear Hierarchy**: Size and weight create visual order
-- **Reading-First Layout**: Wide margins (Notion-inspired)
+**Warm Neutrals Over Stark Contrast:**
+- Cream background (#FAFAF8) instead of pure white - easier on the eyes
+- Near-black text (#0A0A0A) instead of pure black - softer, more refined
+- Warm gray borders (#E5E5E0) - subtle structure without harshness
+- The warmth creates an inviting, human feeling while maintaining high readability
+
+**Maroon as Signature Accent:**
+- Secondary color (#8B2635) serves as the primary accent throughout
+- Sophisticated, bold, memorable - not typical tech blue
+- Used strategically for CTAs, hover states, featured elements
+- Creates cohesive visual identity without overwhelming
+
+**Typography-First Design:**
+- 900-weight headings for impact and hierarchy
+- Generous line-height (1.7-1.8) for comfortable reading
+- Wide margins (680px for articles) - Notion-inspired reading experience
+- Clear scale jumps between heading levels
+
+**Selective Visual Flourishes:**
+- Subtle shadows and inset highlights (not pure brutalism)
+- Smooth transitions and hover effects (300-500ms)
+- Glass effects on premium components (CaseStudyCard)
+- Balance between clean and engaging
+
+**Restrained Color Usage:**
+- 90% warm neutrals (cream, near-black, warm grays)
+- 8% maroon accent (CTAs, hover states, emphasis)
+- 2% highlights (yellow for text, amber for warnings)
+- Restraint creates impact when color appears
 
 ### Why This Works
 
-**For Blogs & Content Sites:**
-- Bold headers grab attention in feeds and social previews
-- Generous spacing creates relaxed reading experience
-- Stark contrast ensures accessibility (WCAG AAA compliant)
-- Minimal distractions keep focus on content
+**For Editorial & Content Sites:**
+- Warm neutrals create comfortable long-reading sessions
+- Maroon accent is sophisticated yet memorable
+- Typography-first approach puts content at center
+- Generous spacing and margins reduce cognitive load
+- Professional without being corporate
 
 **For Technical Audiences:**
-- Brutalism signals authenticity and substance over style
-- Minimalism communicates clarity and precision
-- The aesthetic appeals to engineers and designers alike
+- Clean, structured layouts signal precision
+- Warm aesthetic is approachable, not intimidating
+- Strong typography hierarchy aids scanning
+- Subtle interactions feel modern and polished
+- Appeals to both engineers and designers
 
 ---
 
@@ -76,43 +97,63 @@ This design system blends two seemingly opposing philosophies:
 
 **Philosophy**: Warm neutrals create a softer, more approachable aesthetic while maintaining high readability. The cream background reduces eye strain compared to pure white.
 
-#### **Secondary Accent (Primary Color)**
+#### **The Accent Color (Secondary = Maroon)**
 ```css
---secondary: #8B2635             /* Maroon - sophisticated, bold */
---secondary-foreground: #FAFAF8  /* Cream on maroon */
+--secondary: #8B2635             /* Maroon - the signature accent */
+--secondary-foreground: #FAFAF8  /* Cream text on maroon background */
 ```
 
-**Philosophy**: The maroon secondary color is the primary accent throughout the design system. Use it for CTAs, hover states, featured elements, and visual emphasis.
+**Philosophy**: Despite the name "secondary," this maroon color is THE primary accent throughout the entire design system. It's your signature color.
+
+**Why "secondary" instead of "primary"?**
+In component APIs, "primary" typically means default/neutral, while "secondary" indicates accent. We follow this convention: buttons use `variant="secondary"` for the maroon accent.
+
+**Where maroon appears:**
+- CTAs and important buttons (`<Button variant="secondary">`)
+- Hover states on links and cards (`hover:text-secondary`)
+- Featured badges and labels (`<Badge variant="secondary">`)
+- Visual emphasis in headings and numbers (`className="text-secondary"`)
+- Underline animations and decorative accents
 
 **Usage:**
 ```tsx
 <Button variant="secondary">Primary CTA</Button>
 <span className="text-secondary">Emphasized text</span>
 <Badge variant="secondary">Featured</Badge>
+<Link variant="secondary">Important link</Link>
 ```
 
 #### **Highlight Colors** (Use Sparingly)
 ```css
---accent-yellow: #FFEB3B          /* Bright yellow - text highlighting */
---accent-highlight-blue: #66B3FF  /* Light blue - alternative highlights */
+--accent-yellow: #FFEB3B  /* Highlighter yellow - inline text emphasis */
+--warning: #F59E0B        /* Amber - warning callouts and alerts */
 ```
 
-**Philosophy**: Highlights are for inline text emphasis only. Use yellow for marking key terms, blue for technical references.
+**Philosophy**: These colors are functional, not decorative. Yellow highlights key terms in text. Amber signals warnings and caution.
 
-**Usage Guidelines:**
-- **Secondary (Maroon)**: Primary accent for CTAs, featured items, hover states (main color accent)
-- **Yellow**: Text highlighting with `<Highlighter>` component, inline emphasis
-- **Blue Highlight**: Optional alternative for technical terms or secondary highlighting
-- Use accents in less than 5% of any page - restraint creates impact
+**Usage:**
+- **Yellow**: Only with `<Highlighter>` component for inline text emphasis
+- **Amber/Warning**: Only for warning callouts and alert states
+- Never use for decorative purposes
+- Combined with maroon, keep all highlights under 10% of page content
+
+**Color Distribution Goal:**
+- 90% warm neutrals (cream, near-black, grays)
+- 8% maroon accent (secondary)
+- 2% functional highlights (yellow, amber)
 
 #### **Dark Mode** (Full Support)
 ```css
 .dark {
-  --background: #000000
-  --foreground: #FFFFFF
-  /* Inverted with same high contrast */
+  --background: #000000        /* Pure black background */
+  --foreground: #FFFFFF        /* Pure white text */
+  --secondary: #B84A5A         /* Lighter maroon for dark mode */
+  --accent-yellow: #FFF59D     /* Same highlighter yellow */
+  --warning: #FDB022           /* Brighter amber for dark mode */
 }
 ```
+
+**Dark mode philosophy**: Inverted for high contrast while maintaining the maroon accent identity. The maroon is slightly lighter in dark mode for better visibility.
 
 ### Typography
 
@@ -144,7 +185,7 @@ This design system blends two seemingly opposing philosophies:
 --font-medium: 500   /* Slight emphasis */
 --font-semibold: 600 /* Button text */
 --font-bold: 700     /* Strong emphasis */
---font-black: 900    /* Brutalist headings */
+--font-black: 900    /* Bold impact headings */
 ```
 
 **Usage**: Headers use 900 weight for maximum impact. Body text uses 400 for comfortable reading.
@@ -180,7 +221,7 @@ This design system blends two seemingly opposing philosophies:
 --radius-lg: 4px     /* Large - subtle roundness */
 ```
 
-**Philosophy**: Brutalism favors sharp edges. The 0px default maintains the aesthetic. Minimal rounding (2-4px) is available for functional elements (inputs, badges) where accessibility benefits from softness.
+**Philosophy**: Sharp edges create clean, precise geometry. The 0px default maintains crisp structure throughout the design. Minimal rounding (2-4px) is available for functional elements (inputs, badges) where slight softness improves usability.
 
 ### Layout Containers
 
@@ -361,7 +402,7 @@ All components follow the same pattern:
 
 ## 💻 CodeBlock Component
 
-Display code with brutalist styling, optional syntax highlighting, and line numbers.
+Display code with clean, structured styling, syntax highlighting, and line numbers.
 
 ### Variants
 
@@ -436,7 +477,7 @@ export function App() {
 
 ## 📢 Callout Component
 
-Info, warning, and alert blocks with brutalist styling and selective accent colors.
+Info, warning, and alert blocks with structured styling and selective accent colors.
 
 ### Variants
 
@@ -505,12 +546,12 @@ Dark background with light text - bold confirmation.
 
 ### Design Philosophy
 
-Callouts follow the brutalist-minimal aesthetic:
+Callouts follow the warm editorial aesthetic:
 - **Bold borders** (2px/6px) for strong visual presence
-- **Selective color** - Warning uses yellow, error uses maroon
+- **Selective color** - Warning uses amber, error uses maroon
 - **Clear hierarchy** - Icon, title, content
 - **Generous padding** - 1rem (16px) for breathing room
-- **Sharp corners** - 0px border radius
+- **Sharp corners** - 0px border radius for clean structure
 
 **Usage Guidelines:**
 - Use sparingly (2-3 per page maximum)
@@ -580,10 +621,10 @@ Inline text highlighting with yellow background for visual emphasis.
 
 ### Design Philosophy
 
-The Highlighter component follows the brutalist-minimal aesthetic:
-- **Highlighter yellow background** (`#FFF59D`) - Softer yellow like a real highlighter pen
+The Highlighter component follows the warm editorial aesthetic:
+- **Highlighter yellow background** (`#FFEB3B`) - Bright yellow like a real highlighter pen
 - **Minimal padding** - Just enough to separate from surrounding text
-- **Sharp corners** - No border radius
+- **Sharp corners** - No border radius for clean, precise highlighting
 - **Inline display** - Flows naturally with text
 
 ### Usage Guidelines
@@ -771,11 +812,11 @@ Gray text that turns black on hover.
 
 ### Design Philosophy
 
-The Link component follows brutalist-minimal principles:
-- **No border by default** - Clean, uncluttered appearance
-- **Subtle hover states** - Color transitions instead of underlines
+The Link component follows warm editorial principles:
+- **No underline by default** - Clean, sophisticated appearance
+- **Smooth hover transitions** - Color changes instead of underlines
 - **Optional arrows** - Directional indicators for CTAs
-- **Color variants** - Different semantic meanings (accent=hover effect, secondary=maroon, muted=deemphasized)
+- **Color variants** - Different semantic meanings (accent=hover to maroon, secondary=maroon throughout, muted=deemphasized)
 
 ### Usage Guidelines
 
@@ -806,7 +847,7 @@ The Link component follows brutalist-minimal principles:
 
 ## 🎴 CaseStudyCard Component
 
-Premium card component with liquid glass effects, brutalist shadows, and smooth animations for showcasing projects and case studies.
+Premium card component with liquid glass effects, hard-edged shadows, and smooth animations for showcasing projects and case studies.
 
 ### Basic Usage
 
@@ -851,13 +892,13 @@ Features:
   number="02"
   variant="default"
   title="Solid Background"
-  description="Clean solid background with brutalist shadow effects."
+  description="Clean solid background with hard-edged shadow effects."
 />
 ```
 
 Features:
 - Solid card background
-- Brutalist shadow effects
+- Hard-edged shadow effects
 - No gradient overlays
 - Simpler, cleaner appearance
 
@@ -924,24 +965,24 @@ Features:
 
 ### Design Philosophy
 
-The CaseStudyCard blends brutalism with modern effects:
+The CaseStudyCard blends structured design with premium effects:
 
-**Brutalist Elements:**
+**Structural Elements:**
 - **Bold 2px borders** - Strong geometric framing
-- **Hard drop shadows** - Offset box shadows (4px/8px)
-- **Sharp corners** - 0px border radius
-- **Uppercase title** - Bold, unapologetic typography
+- **Hard drop shadows** - Offset box shadows (4px/8px) for depth
+- **Sharp corners** - 0px border radius for clean edges
+- **Uppercase title** - Bold, confident typography
 - **Large background number** - Oversized decorative element
 
-**Modern Polish:**
+**Premium Polish:**
 - **Liquid glass effect** - Layered gradients create depth
 - **Smooth animations** - 300-1000ms transitions
 - **Hover transformations** - Multiple choreographed effects
 - **Sliding reflection** - Diagonal shine sweep
-- **Color tinting** - Maroon overlays on hover
+- **Maroon tinting** - Signature color overlays on hover
 
 **Why This Works:**
-The card maintains brutalist structure (borders, shadows, typography) while adding subtle visual polish through gradients and animations. The effect is premium without being decorative-heavy.
+The card maintains strong structure (borders, shadows, typography) while adding sophisticated visual polish through gradients and animations. The effect is premium without being overly decorative.
 
 ### Animation Timings
 
@@ -984,7 +1025,7 @@ All animations are carefully choreographed:
 - `className` (optional) - Additional CSS classes
 
 **Built-in Effects:**
-- Brutalist drop shadow with hover transformation
+- Hard drop shadow with hover transformation
 - Card lift on hover (-translate-x-1, -translate-y-1)
 - Title underline animation (0% → 100% width)
 - Button slide animation (translate-x-2)
@@ -1001,8 +1042,8 @@ All animations are carefully choreographed:
 4. Reflection: Diagonal white gradient sweep
 
 **Shadow Evolution:**
-- Rest: `4px 4px 0 0 rgba(0,0,0,1)` - Hard brutalist shadow
-- Hover: `8px 8px 0 0 rgba(139,38,53,0.3)` - Larger maroon shadow
+- Rest: `4px 4px 0 0 rgba(0,0,0,1)` - Hard-edged shadow
+- Hover: `8px 8px 0 0 rgba(139,38,53,0.3)` - Larger maroon-tinted shadow
 
 ---
 
@@ -1945,12 +1986,12 @@ Use in components:
 ## 💡 Best Practices
 
 ### Color Usage
-✓ Keep pages 95% monochrome
-✓ Use accent colors for <5 elements per page
-✓ Red for primary CTAs and warnings
-✓ Blue for secondary actions and links
-✗ Don't mix red and blue in same component
-✗ Don't use accents for backgrounds (only text/borders)
+✓ Keep pages 90% warm neutrals (cream, near-black, grays)
+✓ Maroon (secondary) for CTAs, hover states, featured elements (~8% of page)
+✓ Yellow highlights and amber warnings sparingly (~2% of page)
+✓ Use `variant="secondary"` for primary accent buttons and badges
+✗ Don't overuse maroon - restraint creates impact
+✗ Don't use yellow/amber decoratively - only for functional highlighting/warnings
 
 ### Typography
 ✓ Use 900 weight for hero headings
@@ -1961,10 +2002,11 @@ Use in components:
 
 ### Spacing
 ✓ Use section-padding classes for vertical rhythm
-✓ Prefer space-8 and larger for breathing room
-✓ Use container-reading for articles
+✓ Prefer space-8 and larger for generous breathing room
+✓ Use container-reading (680px) for article content
+✓ Use container-content (1200px) for general layouts
 ✗ Don't add padding to containers AND their parents
-✗ Don't use tight spacing in minimalist designs
+✗ Don't use tight spacing - generous spacing is a design feature
 
 ### Components
 ✓ Use Radix UI components for interactive elements
@@ -2023,4 +2065,4 @@ Outputs to `/build` directory. Can be deployed separately or alongside main app.
 
 ---
 
-**Built with brutal simplicity. Designed for focused content.**
+**Warm, sophisticated, content-first. Built for editorial excellence.**
