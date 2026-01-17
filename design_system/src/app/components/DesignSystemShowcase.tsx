@@ -82,28 +82,28 @@ export function DesignSystemShowcase() {
             </div>
           </div>
 
-          {/* Accent Red */}
+          {/* Secondary Accent */}
           <div>
-            <label className="mb-4 block">Accent - Bold</label>
+            <label className="mb-4 block">Secondary - Maroon</label>
             <div className="space-y-3">
-              <div className="h-24 bg-accent-red flex items-center justify-center">
-                <span className="text-white font-mono text-sm">#DC0D28</span>
+              <div className="h-24 bg-secondary flex items-center justify-center">
+                <span className="text-white font-mono text-sm">#8B2635</span>
               </div>
               <p className="text-sm text-muted-foreground pt-2">
-                Use sparingly for emphasis, calls-to-action, and creative statements
+                Use for emphasis, CTAs, featured elements, and hover states
               </p>
             </div>
           </div>
 
-          {/* Accent Blue */}
+          {/* Accent Yellow */}
           <div>
-            <label className="mb-4 block">Accent - Creative</label>
+            <label className="mb-4 block">Accent - Highlight</label>
             <div className="space-y-3">
-              <div className="h-24 bg-accent-blue flex items-center justify-center">
-                <span className="text-white font-mono text-sm">#4040FF</span>
+              <div className="h-24 bg-accent-yellow flex items-center justify-center">
+                <span className="text-foreground font-mono text-sm">#FFF59D</span>
               </div>
               <p className="text-sm text-muted-foreground pt-2">
-                Use for highlights, links, and technical elements
+                Use for text highlighting and inline emphasis
               </p>
             </div>
           </div>
@@ -181,10 +181,9 @@ export function DesignSystemShowcase() {
             <label className="mb-6 block">Buttons</label>
             <div className="flex flex-wrap gap-4">
               <Button variant="default">Default</Button>
+              <Button variant="secondary">Secondary (Maroon)</Button>
               <Button variant="outline">Outline</Button>
               <Button variant="ghost">Ghost</Button>
-              <Button className="bg-accent-red hover:bg-accent-red/90">Red Accent</Button>
-              <Button className="bg-accent-blue hover:bg-accent-blue/90">Blue Accent</Button>
             </div>
           </div>
 
@@ -193,10 +192,9 @@ export function DesignSystemShowcase() {
             <label className="mb-6 block">Badges</label>
             <div className="flex flex-wrap gap-3">
               <Badge variant="default">Default</Badge>
+              <Badge variant="secondary">Secondary (Maroon)</Badge>
               <Badge variant="outline">Outline</Badge>
-              <Badge variant="secondary">Secondary</Badge>
-              <Badge className="bg-accent-red">Featured</Badge>
-              <Badge className="bg-accent-blue">Technical</Badge>
+              <Badge variant="destructive">Destructive</Badge>
             </div>
           </div>
 

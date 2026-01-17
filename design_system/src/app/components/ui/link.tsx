@@ -8,10 +8,9 @@ const linkVariants = cva(
     variants: {
       variant: {
         default: "text-foreground hover:text-muted-foreground",
-        accent: "text-foreground hover:accent-red",
+        accent: "text-foreground hover:text-secondary",
+        secondary: "text-secondary hover:text-secondary/80",
         muted: "text-muted-foreground hover:text-foreground",
-        blue: "text-accent-blue hover:text-accent-blue/80",
-        red: "text-accent-red hover:text-accent-red/80",
       },
       size: {
         default: "text-base",

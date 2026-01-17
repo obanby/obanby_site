@@ -32,7 +32,7 @@ export const WithAccent = () => (
   <Card className="w-[400px] border-2 border-foreground hover:bg-secondary transition-colors">
     <CardHeader>
       <div className="flex items-start justify-between mb-4">
-        <span className="text-4xl font-black text-accent-red">01</span>
+        <span className="text-4xl font-black text-secondary">01</span>
         <span className="text-sm font-mono text-muted-foreground">2024</span>
       </div>
       <CardTitle>Featured Project</CardTitle>

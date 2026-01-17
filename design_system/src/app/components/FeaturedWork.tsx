@@ -4,21 +4,18 @@ interface WorkItem {
   title: string;
   description: string;
   tags: string[];
-  accentColor?: "red" | "blue";
 }
 
 const workItems: WorkItem[] = [
   {
     title: "Scalable Design Systems",
     description: "Building component libraries that serve millions of users across multiple products and platforms.",
-    tags: ["Systems", "Leadership"],
-    accentColor: "blue"
+    tags: ["Systems", "Leadership"]
   },
   {
     title: "Technical Strategy",
     description: "From individual contributor to engineering leader. Lessons learned scaling teams and products.",
-    tags: ["Leadership", "Strategy"],
-    accentColor: "red"
+    tags: ["Leadership", "Strategy"]
   },
   {
     title: "Full-Stack Architecture",
@@ -48,21 +45,13 @@ export function FeaturedWork() {
             >
               {/* Number */}
               <div className="mb-6">
-                <span 
-                  className={`text-4xl font-black ${
-                    item.accentColor === "red" 
-                      ? "accent-red" 
-                      : item.accentColor === "blue" 
-                      ? "accent-blue" 
-                      : ""
-                  }`}
-                >
+                <span className="text-4xl font-black text-secondary">
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
 
               {/* Content */}
-              <h4 className="mb-4 group-hover:accent-red transition-colors">
+              <h4 className="mb-4 group-hover:text-secondary transition-colors">
                 {item.title}
               </h4>
               

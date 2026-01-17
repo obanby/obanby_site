@@ -1,392 +1,426 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Base Typography */
-  --font-size: 16px;
-  
-  /* Colors - Brutalist Minimal Palette */
-  --background: #FFFFFF;
-  --foreground: #000000;
-  
-  --card: #FFFFFF;
-  --card-foreground: #000000;
-  
-  --popover: #FFFFFF;
-  --popover-foreground: #000000;
-  
-  /* Primary - Pure Black */
-  --primary: #000000;
-  --primary-foreground: #FFFFFF;
-  
-  /* Secondary - Subtle Gray */
-  --secondary: #F5F5F5;
-  --secondary-foreground: #000000;
-  
-  /* Muted - For subtle UI elements */
-  --muted: #FAFAFA;
-  --muted-foreground: #666666;
-  
-  /* Accent Red - Bold statements */
-  --accent-red: #DC0D28;
-  --accent-red-foreground: #FFFFFF;
-  
-  /* Accent Blue - Creative highlights */
-  --accent-blue: #4040FF;
-  --accent-blue-foreground: #FFFFFF;
+    /* Base Typography */
+    --font-size: 16px;
 
-  /* Accent Yellow - Highlights and emphasis (highlighter pen style) */
-  --accent-yellow: #FFF59D;
-  --accent-yellow-foreground: #000000;
+    /* Colors - Brutalist Minimal Palette */
+    --background: #FAFAF8;
+    --foreground: #0A0A0A;
 
-  /* Accent - Default to subtle */
-  --accent: #F5F5F5;
-  --accent-foreground: #000000;
-  
-  /* Destructive */
-  --destructive: #DC0D28;
-  --destructive-foreground: #FFFFFF;
-  
-  /* Borders - Minimal */
-  --border: #E5E5E5;
-  --border-strong: #000000;
-  
-  --input: #F5F5F5;
-  --input-background: #FAFAFA;
-  --switch-background: #E5E5E5;
-  
-  --ring: #000000;
-  
-  /* Typography Weights - Brutalist approach */
-  --font-weight-black: 900;
-  --font-weight-bold: 700;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --font-weight-light: 300;
-  
-  /* Typography Sizes - Large scale for brutalism */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
-  --text-7xl: 4.5rem;
-  
-  /* Spacing Scale - Generous negative space */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
-  --space-32: 8rem;
-  --space-40: 10rem;
-  --space-48: 12rem;
-  
-  /* Border Radius - Minimal/Sharp */
-  --radius: 0px;
-  --radius-sm: 0px;
-  --radius-md: 2px;
-  --radius-lg: 4px;
-  
-  /* Charts */
-  --chart-1: #DC0D28;
-  --chart-2: #4040FF;
-  --chart-3: #000000;
-  --chart-4: #666666;
-  --chart-5: #E5E5E5;
+    --card: #FFFFFF;
+    --card-foreground: #0A0A0A;
+
+    --popover: #FFFFFF;
+    --popover-foreground: #0A0A0A;
+
+    /* Primary - Pure Black */
+    --primary: #0A0A0A;
+    --primary-foreground: #FAFAF8;
+
+    /* Secondary - Accent color */
+    --secondary: #8B2635;
+    --secondary-foreground: #FAFAF8;
+
+    /* Muted - For subtle UI elements */
+    --muted: #F0F0ED;
+    --muted-foreground: #6B6B68;
+
+    /* Accent Red - Bold statements */
+    --accent-red: #000000;
+    --accent-red-foreground: #FFFFFF;
+
+    /* Accent Blue - Creative highlights */
+    --accent-blue: #000000;
+    --accent-blue-foreground: #FFFFFF;
+
+    /* Accent Yellow - Optional highlight */
+    --accent-yellow: #FFEB3B;
+    --accent-yellow-foreground: #000000;
+
+    /* Accent Highlight Blue - Highlighter pen */
+    --accent-highlight-blue: #66B3FF;
+    --accent-highlight-blue-foreground: #000000;
+
+    /* Accent - Default to subtle */
+    --accent: #F5F5F0;
+    --accent-foreground: #0A0A0A;
+
+    /* Destructive */
+    --destructive: #DC0D28;
+    --destructive-foreground: #FFFFFF;
+
+    /* Borders - Minimal */
+    --border: #E5E5E0;
+    --border-strong: #0A0A0A;
+
+    --input: #E0E0E0;
+    --input-background: #FFFFFF;
+    --switch-background: #E0E0E0;
+
+    --ring: #000000;
+
+    /* Typography Weights - Brutalist approach */
+    --font-weight-black: 900;
+    --font-weight-bold: 700;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --font-weight-light: 300;
+
+    /* Typography Sizes - Large scale for brutalism */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --text-7xl: 4.5rem;
+
+    /* Spacing Scale - Generous negative space */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --space-40: 10rem;
+    --space-48: 12rem;
+
+    /* Border Radius - Minimal/Sharp */
+    --radius: 0px;
+    --radius-sm: 0px;
+    --radius-md: 2px;
+    --radius-lg: 4px;
+
+    /* Charts */
+    --chart-1: #f7640d;
+    --chart-2: #000000;
+    --chart-3: #6B6B68;
+    --chart-4: #E5E5E0;
+    --chart-5: #F5F5F0;
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #FFFFFF;
-  
-  --card: #0A0A0A;
-  --card-foreground: #FFFFFF;
-  
-  --popover: #0A0A0A;
-  --popover-foreground: #FFFFFF;
-  
-  --primary: #FFFFFF;
-  --primary-foreground: #000000;
-  
-  --secondary: #1A1A1A;
-  --secondary-foreground: #FFFFFF;
-  
-  --muted: #1A1A1A;
-  --muted-foreground: #999999;
-  
-  --accent-red: #FF1744;
-  --accent-red-foreground: #FFFFFF;
-  
-  --accent-blue: #5E5EFF;
-  --accent-blue-foreground: #FFFFFF;
+    --background: #000000;
+    --foreground: #FFFFFF;
 
-  --accent-yellow: #FFF59D;
-  --accent-yellow-foreground: #000000;
+    --card: #0A0A0A;
+    --card-foreground: #FFFFFF;
 
-  --accent: #1A1A1A;
-  --accent-foreground: #FFFFFF;
-  
-  --destructive: #FF1744;
-  --destructive-foreground: #FFFFFF;
-  
-  --border: #2A2A2A;
-  --border-strong: #FFFFFF;
-  
-  --input: #1A1A1A;
-  --input-background: #0A0A0A;
-  --switch-background: #2A2A2A;
-  
-  --ring: #FFFFFF;
-  
-  --chart-1: #FF1744;
-  --chart-2: #5E5EFF;
-  --chart-3: #FFFFFF;
-  --chart-4: #999999;
-  --chart-5: #2A2A2A;
+    --popover: #0A0A0A;
+    --popover-foreground: #FFFFFF;
+
+    --primary: #FFFFFF;
+    --primary-foreground: #000000;
+
+    --secondary: #1A1A1A;
+    --secondary-foreground: #FFFFFF;
+
+    --muted: #1A1A1A;
+    --muted-foreground: #999999;
+
+    --accent-red: #FF1744;
+    --accent-red-foreground: #FFFFFF;
+
+    --accent-blue: #5E5EFF;
+    --accent-blue-foreground: #FFFFFF;
+
+    --accent: #1A1A1A;
+    --accent-foreground: #FFFFFF;
+
+    --destructive: #FF1744;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #2A2A2A;
+    --border-strong: #FFFFFF;
+
+    --input: #1A1A1A;
+    --input-background: #0A0A0A;
+    --switch-background: #2A2A2A;
+
+    --ring: #FFFFFF;
+
+    --chart-1: #FF1744;
+    --chart-2: #5E5EFF;
+    --chart-3: #FFFFFF;
+    --chart-4: #999999;
+    --chart-5: #2A2A2A;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent-red: var(--accent-red);
-  --color-accent-red-foreground: var(--accent-red-foreground);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-blue-foreground: var(--accent-blue-foreground);
-  --color-accent-yellow: var(--accent-yellow);
-  --color-accent-yellow-foreground: var(--accent-yellow-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
-  --color-input: var(--input);
-  --color-input-background: var(--input-background);
-  --color-switch-background: var(--switch-background);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent-red: var(--accent-red);
+    --color-accent-red-foreground: var(--accent-red-foreground);
+    --color-accent-blue: var(--accent-blue);
+    --color-accent-blue-foreground: var(--accent-blue-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-border-strong: var(--border-strong);
+    --color-input: var(--input);
+    --color-input-background: var(--input-background);
+    --color-switch-background: var(--switch-background);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
 
-  body {
-    @apply bg-background text-foreground;
-    letter-spacing: -0.01em;
-  }
+    body {
+        @apply bg-background text-foreground;
+        letter-spacing: -0.01em;
+    }
 
-  /* Brutalist Typography System */
-  
-  html {
-    font-size: var(--font-size);
-  }
+    /* Brutalist Typography System */
 
-  h1 {
-    font-size: var(--text-5xl);
-    font-weight: var(--font-weight-black);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-  }
+    html {
+        font-size: var(--font-size);
+    }
 
-  h2 {
-    font-size: var(--text-4xl);
-    font-weight: var(--font-weight-bold);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
+    h1 {
+        font-size: var(--text-5xl);
+        font-weight: var(--font-weight-black);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
 
-  h3 {
-    font-size: var(--text-3xl);
-    font-weight: var(--font-weight-bold);
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
+    h2 {
+        font-size: var(--text-4xl);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
 
-  h4 {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-bold);
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-  }
+    h3 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
 
-  h5 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.4;
-  }
+    h4 {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
 
-  h6 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
+    h5 {
+        font-size: var(--text-xl);
+        font-weight: var(--font-weight-medium);
+        line-height: 1.4;
+    }
 
-  p {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.7;
-    letter-spacing: -0.01em;
-  }
+    h6 {
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
 
-  /* Reading optimized paragraph */
-  .prose p {
-    font-size: var(--text-lg);
-    line-height: 1.8;
-    margin-bottom: var(--space-6);
-  }
+    p {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-normal);
+        line-height: 1.7;
+        letter-spacing: -0.01em;
+    }
 
-  label {
-    font-size: var(--text-sm);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-  }
+    /* Reading optimized paragraph */
+    .prose p {
+        font-size: var(--text-lg);
+        line-height: 1.8;
+        margin-bottom: var(--space-6);
+    }
 
-  button {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-    letter-spacing: -0.01em;
-  }
+    label {
+        font-size: var(--text-sm);
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+    }
 
-  input, textarea {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.5;
-  }
+    button {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
 
-  /* Code and monospace */
-  code, pre {
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
-    font-size: 0.9em;
-  }
+    input, textarea {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-normal);
+        line-height: 1.5;
+    }
 
-  /* Links */
-  a {
-    color: var(--foreground);
-    text-decoration: none;
-    border-bottom: 2px solid var(--border);
-    transition: border-color 0.2s;
-  }
+    /* Code and monospace */
+    code, pre {
+        font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
+        font-size: 0.9em;
+    }
 
-  a:hover {
-    border-bottom-color: var(--foreground);
-  }
+    /* Links */
+    a {
+        color: var(--foreground);
+        text-decoration: none;
+        border-bottom: 2px solid var(--border);
+        transition: border-color 0.2s;
+    }
 
-  /* Blockquotes - Brutalist style */
-  blockquote {
-    border-left: 4px solid var(--foreground);
-    padding-left: var(--space-6);
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    font-style: normal;
-    margin: var(--space-12) 0;
-  }
+    a:hover {
+        border-bottom-color: var(--foreground);
+    }
 
-  /* Lists */
-  ul, ol {
-    padding-left: var(--space-6);
-    margin: var(--space-6) 0;
-  }
+    /* Blockquotes - Brutalist style */
+    blockquote {
+        border-left: 4px solid var(--foreground);
+        padding-left: var(--space-6);
+        font-size: var(--text-xl);
+        font-weight: var(--font-weight-medium);
+        font-style: normal;
+        margin: var(--space-12) 0;
+    }
 
-  li {
-    margin-bottom: var(--space-3);
-    line-height: 1.7;
-  }
+    /* Lists */
+    ul, ol {
+        padding-left: var(--space-6);
+        margin: var(--space-6) 0;
+    }
+
+    li {
+        margin-bottom: var(--space-3);
+        line-height: 1.7;
+    }
 }
 
 /* Utility Classes for Design System */
 @layer utilities {
-  .accent-red {
-    color: var(--accent-red);
-  }
+    .accent-red {
+        color: var(--accent-red);
+    }
 
-  .bg-accent-red {
-    background-color: var(--accent-red);
-    color: var(--accent-red-foreground);
-  }
+    .bg-accent-red {
+        background-color: var(--accent-red);
+        color: var(--accent-red-foreground);
+    }
 
-  .accent-blue {
-    color: var(--accent-blue);
-  }
+    .accent-blue {
+        color: var(--accent-blue);
+    }
 
-  .bg-accent-blue {
-    background-color: var(--accent-blue);
-    color: var(--accent-blue-foreground);
-  }
+    .bg-accent-blue {
+        background-color: var(--accent-blue);
+        color: var(--accent-blue-foreground);
+    }
 
-  .border-strong {
-    border-color: var(--border-strong);
-  }
+    .accent-yellow {
+        color: var(--accent-yellow);
+    }
 
-  /* Negative Space Utilities */
-  .section-padding {
-    padding-top: var(--space-24);
-    padding-bottom: var(--space-24);
-  }
+    .bg-accent-yellow {
+        background-color: var(--accent-yellow);
+        color: var(--accent-yellow-foreground);
+    }
 
-  .section-padding-sm {
-    padding-top: var(--space-16);
-    padding-bottom: var(--space-16);
-  }
+    .bg-accent-highlight-blue {
+        background-color: var(--accent-highlight-blue);
+        color: var(--accent-highlight-blue-foreground);
+    }
 
-  .section-padding-lg {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
-  }
+    .border-strong {
+        border-color: var(--border-strong);
+    }
 
-  /* Container for reading */
-  .container-reading {
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
-  }
+    /* Negative Space Utilities */
+    .section-padding {
+        padding-top: var(--space-24);
+        padding-bottom: var(--space-24);
+    }
 
-  /* Container for content */
-  .container-content {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
-  }
+    .section-padding-sm {
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+    }
 
-  /* Brutalist divider */
-  .divider-brutalist {
-    height: 2px;
-    background-color: var(--foreground);
-    margin: var(--space-16) 0;
-  }
+    .section-padding-lg {
+        padding-top: var(--space-32);
+        padding-bottom: var(--space-32);
+    }
+
+    /* Container for reading */
+    .container-reading {
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--space-6);
+        padding-right: var(--space-6);
+    }
+
+    /* Container for content */
+    .container-content {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+        .container-content {
+            padding-left: var(--space-8);
+            padding-right: var(--space-8);
+        }
+    }
+
+    /* Brutalist divider */
+    .divider-brutalist {
+        height: 2px;
+        background-color: var(--foreground);
+        margin: var(--space-16) 0;
+    }
+
+    /* Marquee animation for ticker tape */
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 30s linear infinite;
+    }
 }

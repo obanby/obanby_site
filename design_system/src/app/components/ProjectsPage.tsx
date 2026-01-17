@@ -18,7 +18,7 @@ export function ProjectsPage() {
           <div className="max-w-3xl">
             <label className="mb-6 block">Selected Work</label>
             <h1 className="mb-8">
-              Projects that <span className="accent-red">ship</span>
+              Projects that <span className="text-secondary">ship</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               From side projects to production systems serving millions. 
@@ -33,7 +33,7 @@ export function ProjectsPage() {
         <div className="container-content">
           <div className="border-2 border-foreground p-12">
             <div className="flex items-start justify-between mb-8">
-              <Badge className="bg-accent-red">Featured</Badge>
+              <Badge variant="secondary">Featured</Badge>
               <span className="text-sm font-mono text-muted-foreground">2025-2026</span>
             </div>
             
@@ -70,11 +70,11 @@ export function ProjectsPage() {
             {/* Project 1 */}
             <div className="border-2 border-foreground p-8 hover:bg-secondary transition-colors group cursor-pointer">
               <div className="flex items-start justify-between mb-6">
-                <span className="text-3xl font-black accent-blue">01</span>
+                <span className="text-3xl font-black text-secondary">01</span>
                 <span className="text-sm font-mono text-muted-foreground">2024</span>
               </div>
               
-              <h4 className="mb-4 group-hover:accent-blue transition-colors">
+              <h4 className="mb-4 group-hover:text-secondary transition-colors">
                 Real-time Analytics Dashboard
               </h4>
               
@@ -97,7 +97,7 @@ export function ProjectsPage() {
                 <span className="text-sm font-mono text-muted-foreground">2023</span>
               </div>
               
-              <h4 className="mb-4 group-hover:accent-red transition-colors">
+              <h4 className="mb-4 group-hover:text-secondary transition-colors">
                 Mobile App Architecture
               </h4>
               
@@ -116,11 +116,11 @@ export function ProjectsPage() {
             {/* Project 3 */}
             <div className="border-2 border-foreground p-8 hover:bg-secondary transition-colors group cursor-pointer">
               <div className="flex items-start justify-between mb-6">
-                <span className="text-3xl font-black accent-red">03</span>
+                <span className="text-3xl font-black text-secondary">03</span>
                 <span className="text-sm font-mono text-muted-foreground">2023</span>
               </div>
               
-              <h4 className="mb-4 group-hover:accent-blue transition-colors">
+              <h4 className="mb-4 group-hover:text-secondary transition-colors">
                 API Platform Migration
               </h4>
               
@@ -139,11 +139,11 @@ export function ProjectsPage() {
             {/* Project 4 */}
             <div className="border-2 border-foreground p-8 hover:bg-secondary transition-colors group cursor-pointer">
               <div className="flex items-start justify-between mb-6">
-                <span className="text-3xl font-black accent-blue">04</span>
+                <span className="text-3xl font-black text-secondary">04</span>
                 <span className="text-sm font-mono text-muted-foreground">2022</span>
               </div>
               
-              <h4 className="mb-4 group-hover:accent-red transition-colors">
+              <h4 className="mb-4 group-hover:text-secondary transition-colors">
                 Open Source Component Library
               </h4>
               
@@ -175,7 +175,7 @@ export function ProjectsPage() {
                 <span className="text-background font-mono text-sm">01</span>
               </div>
               <div className="flex-1">
-                <h4 className="mb-2 group-hover:accent-blue transition-colors">
+                <h4 className="mb-2 group-hover:text-secondary transition-colors">
                   Weekend Prototype: AI Writing Assistant
                 </h4>
                 <p className="text-muted-foreground">
@@ -193,7 +193,7 @@ export function ProjectsPage() {
                 <span className="text-background font-mono text-sm">02</span>
               </div>
               <div className="flex-1">
-                <h4 className="mb-2 group-hover:accent-red transition-colors">
+                <h4 className="mb-2 group-hover:text-secondary transition-colors">
                   CLI Tool for Developers
                 </h4>
                 <p className="text-muted-foreground">
@@ -211,7 +211,7 @@ export function ProjectsPage() {
                 <span className="text-background font-mono text-sm">03</span>
               </div>
               <div className="flex-1">
-                <h4 className="mb-2 group-hover:accent-blue transition-colors">
+                <h4 className="mb-2 group-hover:text-secondary transition-colors">
                   Design System Documentation Site
                 </h4>
                 <p className="text-muted-foreground">

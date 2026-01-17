@@ -52,22 +52,17 @@ export const Variants = () => (
     </div>
     <div>
       <Link href="#" variant="accent">
-        Accent variant (red on hover)
+        Accent variant (maroon on hover)
+      </Link>
+    </div>
+    <div>
+      <Link href="#" variant="secondary">
+        Secondary variant (maroon text)
       </Link>
     </div>
     <div>
       <Link href="#" variant="muted">
         Muted variant (starts gray, black on hover)
-      </Link>
-    </div>
-    <div>
-      <Link href="#" variant="blue">
-        Blue variant (blue text)
-      </Link>
-    </div>
-    <div>
-      <Link href="#" variant="red">
-        Red variant (red text)
       </Link>
     </div>
   </div>
@@ -109,11 +104,11 @@ export const InParagraph = () => (
 
     <p className="text-base leading-relaxed">
       Want to learn more about design systems?{" "}
-      <Link href="#" variant="blue" underline="hover">
+      <Link href="#" variant="secondary" underline="hover">
         Check out our component library
       </Link>{" "}
       or{" "}
-      <Link href="#" variant="red">
+      <Link href="#" variant="muted">
         join our community
       </Link>
       .
@@ -154,7 +149,7 @@ export const Navigation = () => (
       </Link>
     </div>
     <div>
-      <Link href="#" variant="blue">
+      <Link href="#" variant="secondary">
         About
       </Link>
     </div>
@@ -194,17 +189,17 @@ export const Footer = () => (
         <h4 className="font-bold mb-4">Social</h4>
         <div className="space-y-2">
           <div>
-            <Link href="#" variant="blue">
+            <Link href="#" variant="secondary">
               Twitter
             </Link>
           </div>
           <div>
-            <Link href="#" variant="blue">
+            <Link href="#" variant="secondary">
               GitHub
             </Link>
           </div>
           <div>
-            <Link href="#" variant="blue">
+            <Link href="#" variant="secondary">
               LinkedIn
             </Link>
           </div>
@@ -255,12 +250,12 @@ export const InlineWithText = () => (
 export const ExternalLinks = () => (
   <div className="space-y-4">
     <div>
-      <Link href="https://github.com" target="_blank" rel="noopener noreferrer" variant="blue">
+      <Link href="https://github.com" target="_blank" rel="noopener noreferrer" variant="secondary">
         GitHub (opens in new tab)
       </Link>
     </div>
     <div>
-      <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" variant="blue">
+      <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" variant="secondary">
         Twitter (opens in new tab)
       </Link>
     </div>
@@ -308,12 +303,12 @@ export const AllExamples = () => (
           </Link>
         </div>
         <div>
-          <Link href="#" variant="blue">
+          <Link href="#" variant="secondary">
             Blue
           </Link>
         </div>
         <div>
-          <Link href="#" variant="red">
+          <Link href="#" variant="secondary">
             Red
           </Link>
         </div>
@@ -328,7 +323,7 @@ export const AllExamples = () => (
           an accent link
         </Link>{" "}
         and{" "}
-        <Link href="#" variant="blue">
+        <Link href="#" variant="secondary">
           a blue link
         </Link>
         . You can also add{" "}
@@ -349,7 +344,7 @@ export const Controlled = ({
   underline = "none",
 }: {
   text?: string;
-  variant?: "default" | "accent" | "muted" | "blue" | "red";
+  variant?: "default" | "accent" | "secondary" | "muted";
   size?: "sm" | "default" | "lg";
   arrow?: boolean;
   underline?: "none" | "hover" | "always";

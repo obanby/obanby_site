@@ -10,7 +10,7 @@ export function BlogFooter() {
           {/* Brand */}
           <div>
             <h4 className="mb-4">
-              <span className="accent-red">■</span> YOUR_NAME
+              <span className="text-secondary">■</span> YOUR_NAME
             </h4>
             <p className="text-muted-foreground">
               Software engineer turned business leader. Writing about the intersection of code and strategy.
@@ -21,10 +21,10 @@ export function BlogFooter() {
           <div>
             <label className="mb-6 block">Navigate</label>
             <nav className="space-y-3">
-              <a href="#" className="block border-b-0 hover:accent-red transition-colors">
+              <a href="#" className="block border-b-0 hover:text-secondary transition-colors">
                 Writing
               </a>
-              <a href="#" className="block border-b-0 hover:accent-blue transition-colors">
+              <a href="#" className="block border-b-0 hover:text-secondary transition-colors">
                 Projects
               </a>
               <a href="#" className="block border-b-0 hover:text-muted-foreground transition-colors">
@@ -42,7 +42,7 @@ export function BlogFooter() {
             <p className="text-muted-foreground mb-6">
               Get updates when I publish new content. No spam, unsubscribe anytime.
             </p>
-            <Button className="w-full md:w-auto bg-foreground hover:bg-foreground/90">
+            <Button variant="secondary" className="w-full md:w-auto">
               Subscribe
             </Button>
           </div>
@@ -55,15 +55,15 @@ export function BlogFooter() {
           <p className="text-sm text-muted-foreground">
             © 2026 All rights reserved
           </p>
-          
+
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm border-b-0 hover:accent-blue transition-colors">
+            <a href="#" className="text-sm border-b-0 hover:text-secondary transition-colors">
               Twitter
             </a>
-            <a href="#" className="text-sm border-b-0 hover:accent-blue transition-colors">
+            <a href="#" className="text-sm border-b-0 hover:text-secondary transition-colors">
               GitHub
             </a>
-            <a href="#" className="text-sm border-b-0 hover:accent-blue transition-colors">
+            <a href="#" className="text-sm border-b-0 hover:text-secondary transition-colors">
               LinkedIn
             </a>
           </div>

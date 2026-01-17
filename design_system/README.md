@@ -66,30 +66,44 @@ This design system blends two seemingly opposing philosophies:
 
 ### Color System
 
-#### **Monochrome Base**
+#### **Warm Neutral Base**
 ```css
---background: #FFFFFF
---foreground: #000000
---muted: #F5F5F5
---border: #E5E5E5
+--background: #FAFAF8   /* Cream white - warm, softer than pure white */
+--foreground: #0A0A0A   /* Near black - softer than pure black */
+--muted: #F0F0ED        /* Light warm gray */
+--border: #E5E5E0       /* Warm gray border */
 ```
 
-**Philosophy**: Content is king. Black text on white background has the highest readability. Muted grays provide subtle structure without distraction.
+**Philosophy**: Warm neutrals create a softer, more approachable aesthetic while maintaining high readability. The cream background reduces eye strain compared to pure white.
 
-#### **Accent Colors** (Use Sparingly - Max 5% of Any Page)
+#### **Secondary Accent (Primary Color)**
 ```css
---accent-red: #DC0D28     /* Passion, urgency, key actions */
---accent-blue: #4040FF    /* Technical, creative, secondary actions */
---accent-yellow: #FFF59D  /* Highlighter pen style, text emphasis */
+--secondary: #8B2635             /* Maroon - sophisticated, bold */
+--secondary-foreground: #FAFAF8  /* Cream on maroon */
 ```
 
-**Philosophy**: Accents are punctuation, not sentences. A single red word in a black headline is more impactful than a red paragraph.
+**Philosophy**: The maroon secondary color is the primary accent throughout the design system. Use it for CTAs, hover states, featured elements, and visual emphasis.
+
+**Usage:**
+```tsx
+<Button variant="secondary">Primary CTA</Button>
+<span className="text-secondary">Emphasized text</span>
+<Badge variant="secondary">Featured</Badge>
+```
+
+#### **Highlight Colors** (Use Sparingly)
+```css
+--accent-yellow: #FFEB3B          /* Bright yellow - text highlighting */
+--accent-highlight-blue: #66B3FF  /* Light blue - alternative highlights */
+```
+
+**Philosophy**: Highlights are for inline text emphasis only. Use yellow for marking key terms, blue for technical references.
 
 **Usage Guidelines:**
-- Red: CTAs, warnings, emphasis on critical info
-- Blue: Links, technical terms, secondary actions
-- Yellow: Text highlighting, inline emphasis, key terms
-- Use sparingly - each accent should appear in less than 5% of the page
+- **Secondary (Maroon)**: Primary accent for CTAs, featured items, hover states (main color accent)
+- **Yellow**: Text highlighting with `<Highlighter>` component, inline emphasis
+- **Blue Highlight**: Optional alternative for technical terms or secondary highlighting
+- Use accents in less than 5% of any page - restraint creates impact
 
 #### **Dark Mode** (Full Support)
 ```css
@@ -426,37 +440,37 @@ Info, warning, and alert blocks with brutalist styling and selective accent colo
 ```
 Black border, neutral styling.
 
-**Info (Blue Accent):**
+**Info:**
 ```tsx
 <Callout variant="info" title="Information">
   Use this for helpful tips and informational notes.
 </Callout>
 ```
-Blue left border accent - perfect for tips and notes.
+Bold left border - draws attention to important information.
 
-**Warning (Red Accent):**
+**Warning (Maroon Accent):**
 ```tsx
 <Callout variant="warning" title="Warning">
   Use this to indicate caution or important notices.
 </Callout>
 ```
-Red left border accent - draws attention without overwhelming.
+Maroon left border accent - draws attention without overwhelming.
 
-**Error (Inverted Red):**
+**Error (Inverted Maroon):**
 ```tsx
 <Callout variant="error" title="Error">
   Use this for critical alerts and error messages.
 </Callout>
 ```
-Red background with white text - maximum urgency.
+Maroon background with cream text - maximum urgency.
 
-**Success (Inverted Black):**
+**Success (Inverted):**
 ```tsx
 <Callout variant="success" title="Success">
   Use this to confirm successful operations.
 </Callout>
 ```
-Black background with white text - bold confirmation.
+Dark background with light text - bold confirmation.
 
 ### Customization
 
@@ -484,16 +498,16 @@ Black background with white text - bold confirmation.
 ### Design Philosophy
 
 Callouts follow the brutalist-minimal aesthetic:
-- **Bold borders** (2px) for strong visual presence
-- **Selective color** - Only info (blue) and warning (red) use accents
+- **Bold borders** (2px/6px) for strong visual presence
+- **Selective color** - Warning and error variants use maroon accent
 - **Clear hierarchy** - Icon, title, content
 - **Generous padding** - 1rem (16px) for breathing room
 - **Sharp corners** - 0px border radius
 
 **Usage Guidelines:**
 - Use sparingly (2-3 per page maximum)
-- Reserve red for genuine warnings/errors
-- Use blue for helpful tips and information
+- Reserve warning/error (maroon) for genuine alerts
+- Use info for helpful tips and general information
 - Keep content concise (2-3 sentences)
 - Callouts should enhance, not replace, content
 

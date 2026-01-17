@@ -38,14 +38,14 @@ export function ArticleCard({
             </>
           )}
           {featured && (
-            <Badge className="bg-accent-red text-xs ml-auto">
+            <Badge variant="secondary" className="text-xs ml-auto">
               Featured
             </Badge>
           )}
         </div>
 
         {/* Title */}
-        <h3 className="group-hover:accent-red transition-colors">
+        <h3 className="group-hover:text-secondary transition-colors">
           {title}
         </h3>
 
@@ -56,7 +56,7 @@ export function ArticleCard({
 
         {/* Read More */}
         <div className="pt-2">
-          <span className="text-sm border-b-2 border-foreground group-hover:accent-red transition-colors">
+          <span className="text-sm border-b-2 border-foreground group-hover:text-secondary transition-colors">
             Read article →
           </span>
         </div>

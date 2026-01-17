@@ -25,14 +25,10 @@ export function ComponentShowcase() {
         <div className="border-2 border-muted p-8 bg-muted/50">
           <div className="flex flex-wrap gap-4 mb-6">
             <Button variant="default">Default</Button>
+            <Button variant="secondary">Secondary (Maroon)</Button>
             <Button variant="outline">Outline</Button>
             <Button variant="ghost">Ghost</Button>
             <Button variant="destructive">Destructive</Button>
-            <Button variant="secondary">Secondary</Button>
-          </div>
-          <div className="flex flex-wrap gap-4 mb-6">
-            <Button className="bg-accent-red hover:bg-accent-red/90">Red Accent</Button>
-            <Button className="bg-accent-blue hover:bg-accent-blue/90">Blue Accent</Button>
           </div>
           <div className="flex flex-wrap gap-4">
             <Button size="sm">Small</Button>
@@ -44,7 +40,7 @@ export function ComponentShowcase() {
 {`import { Button } from "@/app/components/ui/button";
 
 <Button variant="default">Default</Button>
-<Button className="bg-accent-red">Red Accent</Button>
+<Button variant="secondary">Secondary</Button>
 <Button size="lg">Large</Button>`}
         </pre>
       </section>
@@ -57,19 +53,17 @@ export function ComponentShowcase() {
         <div className="border-2 border-muted p-8 bg-muted/50">
           <div className="flex flex-wrap gap-3">
             <Badge>Default</Badge>
+            <Badge variant="secondary">Secondary (Maroon)</Badge>
             <Badge variant="outline">Outline</Badge>
-            <Badge variant="secondary">Secondary</Badge>
             <Badge variant="destructive">Destructive</Badge>
-            <Badge className="bg-accent-red">Red</Badge>
-            <Badge className="bg-accent-blue">Blue</Badge>
           </div>
         </div>
         <pre className="mt-4 bg-foreground text-background p-4 text-sm overflow-x-auto">
 {`import { Badge } from "@/app/components/ui/badge";
 
 <Badge>Default</Badge>
-<Badge variant="outline">Outline</Badge>
-<Badge className="bg-accent-red">Red</Badge>`}
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="outline">Outline</Badge>`}
         </pre>
       </section>
 
@@ -251,15 +245,15 @@ from "@/app/components/ui/tabs";
             <p>The quick brown fox jumps over the lazy dog. This is body text with proper line-height and spacing.</p>
           </div>
           <div>
-            <label className="block mb-2 text-xs">With Accent Colors</label>
-            <h2>Heading with <span className="accent-red">red accent</span></h2>
-            <h3>Heading with <span className="accent-blue">blue accent</span></h3>
+            <label className="block mb-2 text-xs">With Accent Color</label>
+            <h2>Heading with <span className="text-secondary">secondary accent</span></h2>
+            <h3>Regular heading without accent</h3>
           </div>
         </div>
         <pre className="mt-4 bg-foreground text-background p-4 text-sm overflow-x-auto">
 {`<h1>Main Headline</h1>
-<h2>Section <span className="accent-red">with red</span></h2>
-<h3>Subsection <span className="accent-blue">with blue</span></h3>
+<h2>Section <span className="text-secondary">with accent</span></h2>
+<h3>Regular heading</h3>
 <p>Body text...</p>`}
         </pre>
       </section>
@@ -273,7 +267,7 @@ from "@/app/components/ui/tabs";
         <div className="space-y-8">
           <div>
             <label className="block mb-4">Container - Reading (680px)</label>
-            <div className="container-reading border-2 border-accent-blue p-8">
+            <div className="container-reading border-2 border-secondary p-8">
               <p className="text-sm text-muted-foreground">
                 Use this for article content and long-form reading. Optimal width for readability.
               </p>
@@ -282,7 +276,7 @@ from "@/app/components/ui/tabs";
 
           <div>
             <label className="block mb-4">Container - Content (1200px)</label>
-            <div className="container-content border-2 border-accent-red p-8">
+            <div className="container-content border-2 border-foreground p-8">
               <p className="text-sm text-muted-foreground">
                 Use this for general layouts, grids, and wider content sections.
               </p>
@@ -322,10 +316,10 @@ from "@/app/components/ui/tabs";
         <div className="grid md:grid-cols-2 gap-8 text-sm font-mono">
           <div>
             <p className="opacity-70 mb-3">COLORS</p>
-            <p>accent-red → Text color</p>
-            <p>bg-accent-red → Background</p>
-            <p>accent-blue → Text color</p>
-            <p>bg-accent-blue → Background</p>
+            <p>text-secondary → Maroon accent</p>
+            <p>bg-secondary → Maroon background</p>
+            <p>text-muted-foreground → Gray text</p>
+            <p>bg-muted → Light gray bg</p>
           </div>
           <div>
             <p className="opacity-70 mb-3">SPACING</p>

@@ -8,7 +8,7 @@ export function BlogHeader() {
           {/* Logo / Site Name */}
           <div>
             <h3 className="tracking-tight">
-              <span className="accent-red">■</span> YOUR_NAME
+              <span className="text-secondary">■</span> YOUR_NAME
             </h3>
           </div>
 

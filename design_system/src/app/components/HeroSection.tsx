@@ -14,7 +14,7 @@ export function HeroSection() {
           <h1 className="mb-8 leading-none">
             Building systems.
             <br />
-            <span className="accent-red">Leading teams.</span>
+            Leading teams.
             <br />
             Shipping products.
           </h1>
@@ -27,7 +27,7 @@ export function HeroSection() {
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <Button size="lg" className="bg-foreground hover:bg-foreground/90">
+            <Button size="lg" variant="secondary">
               Read latest posts
             </Button>
             <Button size="lg" variant="outline">

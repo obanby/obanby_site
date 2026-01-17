@@ -8,9 +8,9 @@ const calloutVariants = cva(
     variants: {
       variant: {
         default: "bg-background text-foreground border-foreground",
-        info: "bg-background text-accent-blue border-accent-blue border-l-[6px]",
-        warning: "bg-background text-accent-red border-accent-red border-l-[6px]",
-        error: "bg-accent-red text-background border-accent-red",
+        info: "bg-background text-foreground border-foreground border-l-[6px]",
+        warning: "bg-background text-secondary border-secondary border-l-[6px]",
+        error: "bg-secondary text-secondary-foreground border-secondary",
         success: "bg-foreground text-background border-foreground",
       },
     },
@@ -26,9 +26,9 @@ const calloutIconVariants = cva(
     variants: {
       variant: {
         default: "text-foreground",
-        info: "text-accent-blue",
-        warning: "text-accent-red",
-        error: "text-background",
+        info: "text-foreground",
+        warning: "text-secondary",
+        error: "text-secondary-foreground",
         success: "text-background",
       },
     },
