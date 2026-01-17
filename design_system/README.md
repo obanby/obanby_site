@@ -324,6 +324,7 @@ function Component({ className, variant, ...props }) {
 - `ArticleCard` - Blog post preview with image, title, excerpt, metadata
 - `CaseStudyCard` - Premium card with liquid glass effects, shadows, and animations
 - `ProjectCard` - Lightweight project card with hover scale, year badge, and tags
+- `VideoCard` - YouTube video card with thumbnail, play button, and optional article link
 
 **Layout Components:**
 - `Collage` - Flexible masonry grid layout for cards and mixed content with section headers
@@ -1477,6 +1478,232 @@ The Collage component provides a flexible grid system for organizing heterogeneo
   gap={4}
   footer={<Button>View More</Button>}
 />
+```
+
+---
+
+## 🎥 VideoCard Component
+
+YouTube video card with split layout: thumbnail with play button on the left, content on the right, and optional article link.
+
+### Basic Usage
+
+```tsx
+<VideoCard
+  title="Building Design Systems at Scale"
+  creator="Tech Conference 2024"
+  note="A deep dive into component architecture and design tokens."
+  url="https://www.youtube.com/watch?v=VIDEO_ID"
+/>
+```
+
+### With Article Link
+
+```tsx
+<VideoCard
+  title="The Future of Web Development"
+  creator="React Summit 2024"
+  note="Exploring modern frameworks and server components."
+  url="https://www.youtube.com/watch?v=VIDEO_ID"
+  articleUrl="/blog/web-development"
+  articleTitle="Read what I think"
+/>
+```
+
+The article link appears at the bottom with an arrow, linking to your written perspective on the topic.
+
+### Sizes
+
+**Small:**
+```tsx
+<VideoCard
+  title="Quick Tech Talk"
+  creator="Podcast"
+  note="15-minute discussion."
+  url="https://www.youtube.com/watch?v=VIDEO_ID"
+  size="small"
+/>
+```
+Compact card for dense layouts (thumbnail: 160px).
+
+**Medium (Default):**
+```tsx
+<VideoCard
+  title="Conference Keynote"
+  creator="Summit 2024"
+  note="45-minute presentation."
+  url="https://www.youtube.com/watch?v=VIDEO_ID"
+  size="medium"
+/>
+```
+Standard size for most layouts (thumbnail: 192px).
+
+**Large:**
+```tsx
+<VideoCard
+  title="Workshop: Advanced Patterns"
+  creator="Frontend Masters"
+  note="Comprehensive 2-hour workshop covering advanced techniques."
+  url="https://www.youtube.com/watch?v=VIDEO_ID"
+  size="large"
+/>
+```
+Larger card for featured videos (thumbnail: 224px).
+
+### Variants
+
+**Default:**
+```tsx
+<VideoCard
+  title="Video Title"
+  url="..."
+  variant="default"
+/>
+```
+Light background, dark text - standard appearance.
+
+**Dark:**
+```tsx
+<VideoCard
+  title="Video Title"
+  url="..."
+  variant="dark"
+/>
+```
+Dark background, light text - inverted for special sections.
+
+### Interactive Features
+
+**Video Playback:**
+- Click thumbnail to play video inline
+- YouTube videos embed automatically
+- Play button shows on hover with maroon accent
+- Thumbnail zooms on hover (scale-110)
+
+**Hover Effects:**
+1. **Card scale**: Grows to 102%
+2. **Card lift**: Translates up 1px
+3. **Shadow**: Inset highlight becomes more prominent + outer shadow
+4. **Thumbnail zoom**: Background image scales to 110%
+5. **Play button**: Scales to 110%, background turns maroon
+6. **Title color**: Changes to maroon
+7. **Dark overlay**: Fades in over thumbnail
+
+### Component Layout
+
+**Left Side (Thumbnail):**
+- Video thumbnail (auto-fetched from YouTube)
+- Gradient overlay
+- Play button (appears/scales on hover)
+- Click to play/embed video
+
+**Right Side (Content):**
+- Title (bold, uppercase on hover turns maroon)
+- Creator (small, mono, uppercase)
+- Note/description (muted text)
+- Article link (optional, bottom border separator)
+
+### Design Philosophy
+
+**Purpose:**
+Display video content with commentary/context. Perfect for curating talks, interviews, and presentations with your written perspective.
+
+**Key Features:**
+- **Split layout**: Video left, content right
+- **Auto-embed**: YouTube videos play inline
+- **Thumbnail auto-fetch**: Automatically retrieves YouTube thumbnails
+- **Article integration**: Link videos to your written content
+- **Responsive sizes**: 3 size options for different contexts
+- **Hover effects**: Subtle scale, shadow, and color changes
+
+**When to use:**
+- Talks & appearances pages
+- Video content curation
+- Linking videos to your essays/commentary
+- Interview/podcast showcases
+- Educational content libraries
+
+### Component Props
+
+**Required:**
+- `title` (string) - Video title
+- `url` (string) - YouTube URL or custom thumbnail
+
+**Optional:**
+- `creator` (string) - Creator/source name
+- `note` (string) - Description/commentary about the video
+- `articleUrl` (string) - Link to related article/essay
+- `articleTitle` (string) - Link text (default: "Read what I think")
+- `size` ("small" | "medium" | "large") - Card size (default: "medium")
+- `variant` ("default" | "dark") - Color scheme (default: "default")
+- `className` (string) - Additional CSS classes
+
+### Usage Guidelines
+
+**Best practices:**
+- Use vertical stack for video series/courses
+- Use grid layout for multiple unrelated videos
+- Add article links when you have written commentary
+- Keep notes concise (1-2 sentences)
+- Use dark variant sparingly for emphasis
+- Include creator attribution for external content
+
+**Layout recommendations:**
+- **Single featured video**: Full width, size large
+- **Video list**: Vertical stack, size small-medium, gap-4-6
+- **Video grid**: 2 columns, size medium, gap-6
+- **Course series**: Vertical stack with sequential titles
+
+**Content mixing:**
+- Combine with text sections for context
+- Add between blog posts for multimedia content
+- Use in portfolio to showcase presentations
+- Link to blog posts for deeper commentary
+
+### YouTube Integration
+
+**Automatic thumbnail fetching:**
+```tsx
+// Supports various YouTube URL formats
+url="https://www.youtube.com/watch?v=VIDEO_ID"
+url="https://youtu.be/VIDEO_ID"
+url="https://www.youtube.com/embed/VIDEO_ID"
+```
+
+**Quality fallback:**
+Attempts `maxresdefault` (1920x1080), falls back to `hqdefault` (480x360) if not available.
+
+**Custom thumbnails:**
+```tsx
+// Use any image URL for non-YouTube videos
+url="https://example.com/thumbnail.jpg"
+```
+
+### Examples
+
+**Talks Page:**
+```tsx
+<section className="section-padding-lg">
+  <div className="container-content">
+    <h2 className="mb-16">Talks & Appearances</h2>
+
+    <div className="space-y-6 max-w-3xl">
+      <VideoCard
+        title="Conference Keynote"
+        creator="Tech Summit 2024"
+        note="Building systems that scale."
+        url="https://www.youtube.com/watch?v=..."
+        articleUrl="/blog/conference-notes"
+      />
+      <VideoCard
+        title="Podcast Interview"
+        creator="Engineering Podcast"
+        note="Discussion on leadership."
+        url="https://www.youtube.com/watch?v=..."
+      />
+    </div>
+  </div>
+</section>
 ```
 
 ---
