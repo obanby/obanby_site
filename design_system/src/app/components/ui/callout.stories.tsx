@@ -8,13 +8,13 @@ export const Default = () => (
 
 export const Info = () => (
   <Callout variant="info" title="Information">
-    This is an informational callout. Use the blue accent to highlight important notes or tips.
+    This is an informational callout. Use for helpful tips and important notes.
   </Callout>
 );
 
 export const Warning = () => (
   <Callout variant="warning" title="Warning">
-    This is a warning callout. Use the red accent to indicate caution or important notices.
+    This is a warning callout. Uses the yellow accent to indicate caution or important notices.
   </Callout>
 );
 
@@ -65,19 +65,19 @@ export const AllVariants = () => (
     </Callout>
 
     <Callout variant="info" title="Info">
-      Info variant with blue accent for informational messages.
+      Info variant with bold left border for informational messages.
     </Callout>
 
     <Callout variant="warning" title="Warning">
-      Warning variant with red accent for cautionary messages.
+      Warning variant with yellow accent for cautionary messages.
     </Callout>
 
     <Callout variant="error" title="Error">
-      Error variant with inverted red background for critical alerts.
+      Error variant with maroon background for critical alerts.
     </Callout>
 
     <Callout variant="success" title="Success">
-      Success variant with inverted black background for confirmations.
+      Success variant with inverted dark background for confirmations.
     </Callout>
   </div>
 );

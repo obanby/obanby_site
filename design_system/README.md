@@ -312,7 +312,6 @@ function Component({ className, variant, ...props }) {
 - `ArticleLayout` - Long-form reading layout with max-width
 
 **Content Components:**
-- `ArticleCard` - Blog post preview with image, title, excerpt
 - `BlogGrid` - Responsive grid of article cards
 - `FeaturedWork` - Project showcase with large images
 - `CTASection` - Newsletter signup with form
@@ -320,6 +319,14 @@ function Component({ className, variant, ...props }) {
 - `Callout` - Info/warning/error blocks with icons and variants
 - `Highlighter` - Inline text highlighting with yellow background for emphasis
 - `Link` - Text links with hover states, arrows, and color variants
+
+**Card Components:**
+- `ArticleCard` - Blog post preview with image, title, excerpt, metadata
+- `CaseStudyCard` - Premium card with liquid glass effects, shadows, and animations
+- `ProjectCard` - Lightweight project card with hover scale, year badge, and tags
+
+**Layout Components:**
+- `Collage` - Flexible masonry grid layout for cards and mixed content with section headers
 
 ### Radix UI Components (50+)
 
@@ -448,13 +455,13 @@ Black border, neutral styling.
 ```
 Bold left border - draws attention to important information.
 
-**Warning (Maroon Accent):**
+**Warning (Yellow):**
 ```tsx
 <Callout variant="warning" title="Warning">
   Use this to indicate caution or important notices.
 </Callout>
 ```
-Maroon left border accent - draws attention without overwhelming.
+Yellow left border accent - typical warning color that draws attention.
 
 **Error (Inverted Maroon):**
 ```tsx
@@ -499,15 +506,17 @@ Dark background with light text - bold confirmation.
 
 Callouts follow the brutalist-minimal aesthetic:
 - **Bold borders** (2px/6px) for strong visual presence
-- **Selective color** - Warning and error variants use maroon accent
+- **Selective color** - Warning uses yellow, error uses maroon
 - **Clear hierarchy** - Icon, title, content
 - **Generous padding** - 1rem (16px) for breathing room
 - **Sharp corners** - 0px border radius
 
 **Usage Guidelines:**
 - Use sparingly (2-3 per page maximum)
-- Reserve warning/error (maroon) for genuine alerts
-- Use info for helpful tips and general information
+- **Warning (yellow)**: Caution, important notices, things to be aware of
+- **Error (maroon)**: Critical alerts, errors, urgent issues
+- **Info**: Helpful tips, general information, neutral notices
+- **Success**: Confirmations, positive outcomes
 - Keep content concise (2-3 sentences)
 - Callouts should enhance, not replace, content
 
@@ -659,13 +668,21 @@ The arrow is perfect for CTAs and "read more" style links.
 ```
 Black text that turns gray on hover.
 
-**Accent (Red):**
+**Accent (Maroon on hover):**
 ```tsx
 <Link href="#" variant="accent">
-  Hover for red
+  Hover for maroon
 </Link>
 ```
-Black text that turns red on hover - perfect for important links.
+Black text that turns maroon on hover - perfect for important links.
+
+**Secondary (Maroon):**
+```tsx
+<Link href="#" variant="secondary">
+  Maroon link
+</Link>
+```
+Maroon text throughout - great for featured links and emphasis.
 
 **Muted:**
 ```tsx
@@ -674,22 +691,6 @@ Black text that turns red on hover - perfect for important links.
 </Link>
 ```
 Gray text that turns black on hover.
-
-**Blue:**
-```tsx
-<Link href="#" variant="blue">
-  Blue link
-</Link>
-```
-Blue text throughout - great for external links or social media.
-
-**Red:**
-```tsx
-<Link href="#" variant="red">
-  Red link
-</Link>
-```
-Red text throughout - for warnings or destructive actions.
 
 ### Sizes
 
@@ -729,7 +730,7 @@ Red text throughout - for warnings or destructive actions.
 <nav className="space-y-3">
   <Link href="#" variant="default">Writing</Link>
   <Link href="#" variant="accent">Projects</Link>
-  <Link href="#" variant="blue">About</Link>
+  <Link href="#" variant="secondary">About</Link>
 </nav>
 ```
 
@@ -737,9 +738,9 @@ Red text throughout - for warnings or destructive actions.
 ```tsx
 <footer>
   <h4>Social</h4>
-  <Link href="#" variant="blue">Twitter</Link>
-  <Link href="#" variant="blue">GitHub</Link>
-  <Link href="#" variant="blue">LinkedIn</Link>
+  <Link href="#" variant="secondary">Twitter</Link>
+  <Link href="#" variant="secondary">GitHub</Link>
+  <Link href="#" variant="secondary">LinkedIn</Link>
 </footer>
 ```
 
@@ -761,7 +762,7 @@ Red text throughout - for warnings or destructive actions.
   href="https://example.com"
   target="_blank"
   rel="noopener noreferrer"
-  variant="blue"
+  variant="secondary"
 >
   External resource
 </Link>
@@ -773,22 +774,22 @@ The Link component follows brutalist-minimal principles:
 - **No border by default** - Clean, uncluttered appearance
 - **Subtle hover states** - Color transitions instead of underlines
 - **Optional arrows** - Directional indicators for CTAs
-- **Color variants** - Different semantic meanings (accent=important, blue=external, muted=secondary)
+- **Color variants** - Different semantic meanings (accent=hover effect, secondary=maroon, muted=deemphasized)
 
 ### Usage Guidelines
 
 **When to use each variant:**
-- **Default**: General in-content links, navigation
-- **Accent**: Important CTAs, featured links, "read more"
-- **Muted**: Secondary links, footer links, less important actions
-- **Blue**: External links, social media, technical references
-- **Red**: Warnings, destructive actions, urgent links
+- **Default**: General in-content links, navigation (hover: gray)
+- **Accent**: Important CTAs, featured links, "read more" (hover: maroon)
+- **Secondary**: External links, social media, featured navigation (maroon throughout)
+- **Muted**: Less important actions, tertiary links (gray, hover: black)
 
 **Best practices:**
 - Use arrows for CTAs and directional links
 - Keep underlines off by default for cleaner look
 - Use `underline="hover"` for traditional link behavior
-- Match link color to context (blue for social, red for warnings)
+- Use secondary variant for links that need to stand out
+- Reserve accent variant for hover effects on important links
 - Don't mix too many variants on one page
 
 ### Accessibility
@@ -799,6 +800,684 @@ The Link component follows brutalist-minimal principles:
 - High contrast ratios maintained
 - Works with screen readers
 - Supports all standard link attributes (target, rel, etc.)
+
+---
+
+## 🎴 CaseStudyCard Component
+
+Premium card component with liquid glass effects, brutalist shadows, and smooth animations for showcasing projects and case studies.
+
+### Basic Usage
+
+```tsx
+<CaseStudyCard
+  title="Design System"
+  description="Built a comprehensive design system serving 50+ products across web and mobile."
+/>
+```
+
+### With Number
+
+```tsx
+<CaseStudyCard
+  number="01"
+  title="Enterprise Platform"
+  description="Scalable architecture processing 1M+ events per day."
+/>
+```
+
+### Variants
+
+**Glass (Default):**
+```tsx
+<CaseStudyCard
+  number="01"
+  variant="glass"
+  title="Glass Effect"
+  description="Liquid glass effect with gradient overlays and reflection animations."
+/>
+```
+
+Features:
+- Gradient background (background → card → muted)
+- Layered gradient overlays on hover (secondary color tints)
+- Sliding glass reflection effect (diagonal shine)
+- Subtle radial gradient from bottom
+
+**Default (Solid):**
+```tsx
+<CaseStudyCard
+  number="02"
+  variant="default"
+  title="Solid Background"
+  description="Clean solid background with brutalist shadow effects."
+/>
+```
+
+Features:
+- Solid card background
+- Brutalist shadow effects
+- No gradient overlays
+- Simpler, cleaner appearance
+
+### Interactive Effects
+
+**On Hover:**
+1. **Shadow Transformation**: `4px 4px black` → `8px 8px maroon/30%`
+2. **Card Movement**: Slight translate up and left (-1px each direction)
+3. **Number Scale**: Background number scales to 110% and increases opacity
+4. **Underline Animation**: Maroon line expands from 0 to full width under title
+5. **Button Shift**: Button slides right by 2px
+6. **Glass Reflection**: Diagonal shine slides across card (glass variant only)
+7. **Gradient Overlays**: Fade in on hover (glass variant only)
+
+### In Grid Layout
+
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <CaseStudyCard
+    number="01"
+    variant="glass"
+    title="Project One"
+    description="First project description..."
+  />
+  <CaseStudyCard
+    number="02"
+    variant="glass"
+    title="Project Two"
+    description="Second project description..."
+  />
+  <CaseStudyCard
+    number="03"
+    variant="glass"
+    title="Project Three"
+    description="Third project description..."
+  />
+</div>
+```
+
+### In Section
+
+```tsx
+<section className="section-padding-lg">
+  <div className="container-content">
+    <h2 className="mb-20">Featured Work</h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <CaseStudyCard
+        number="01"
+        variant="glass"
+        title="Design Systems"
+        description="Component libraries serving millions of users."
+      />
+      <CaseStudyCard
+        number="02"
+        variant="glass"
+        title="Technical Leadership"
+        description="Scaling teams and products in high-growth environments."
+      />
+    </div>
+  </div>
+</section>
+```
+
+### Design Philosophy
+
+The CaseStudyCard blends brutalism with modern effects:
+
+**Brutalist Elements:**
+- **Bold 2px borders** - Strong geometric framing
+- **Hard drop shadows** - Offset box shadows (4px/8px)
+- **Sharp corners** - 0px border radius
+- **Uppercase title** - Bold, unapologetic typography
+- **Large background number** - Oversized decorative element
+
+**Modern Polish:**
+- **Liquid glass effect** - Layered gradients create depth
+- **Smooth animations** - 300-1000ms transitions
+- **Hover transformations** - Multiple choreographed effects
+- **Sliding reflection** - Diagonal shine sweep
+- **Color tinting** - Maroon overlays on hover
+
+**Why This Works:**
+The card maintains brutalist structure (borders, shadows, typography) while adding subtle visual polish through gradients and animations. The effect is premium without being decorative-heavy.
+
+### Animation Timings
+
+All animations are carefully choreographed:
+- **Shadow/transform**: 300ms - Quick, responsive feel
+- **Underline**: 500ms - Smooth, noticeable
+- **Gradients**: 500ms - Fade in elegantly
+- **Number scale**: 500ms - Subtle zoom
+- **Reflection**: 1000ms - Slow, luxurious sweep
+
+### Usage Guidelines
+
+**When to use:**
+- Project portfolios and case study showcases
+- Featured work sections
+- High-impact content that deserves premium presentation
+- Landing pages and marketing content
+
+**Best practices:**
+- Use in grids of 2-3 cards for balance
+- Prefer glass variant for premium feel
+- Use default variant for cleaner, simpler layouts
+- Include numbers for sequential presentation
+- Keep descriptions concise (2-3 sentences)
+- Use in sections with generous spacing
+
+**Layout recommendations:**
+- **Single featured**: Full width (max-w-4xl)
+- **Two column**: md:grid-cols-2, gap-12
+- **Three column**: lg:grid-cols-3, gap-8
+- Always add generous gap between cards (8-12)
+
+### Component Features
+
+**Props:**
+- `title` (required) - Card heading (string)
+- `description` (required) - Card content (string)
+- `number` (optional) - Large background number (string)
+- `variant` (optional) - "glass" (default) or "default"
+- `className` (optional) - Additional CSS classes
+
+**Built-in Effects:**
+- Brutalist drop shadow with hover transformation
+- Card lift on hover (-translate-x-1, -translate-y-1)
+- Title underline animation (0% → 100% width)
+- Button slide animation (translate-x-2)
+- Number scale and opacity change
+- Glass reflection sweep (glass variant)
+- Gradient overlays (glass variant)
+
+### Technical Implementation
+
+**Glass Effect Layers:**
+1. Base gradient: `from-background via-card to-muted/30`
+2. Before overlay: `from-secondary/5 via-transparent to-secondary/10`
+3. After overlay: Radial gradient with maroon tint at bottom
+4. Reflection: Diagonal white gradient sweep
+
+**Shadow Evolution:**
+- Rest: `4px 4px 0 0 rgba(0,0,0,1)` - Hard brutalist shadow
+- Hover: `8px 8px 0 0 rgba(139,38,53,0.3)` - Larger maroon shadow
+
+---
+
+## 📇 ProjectCard Component
+
+Lightweight project card with hover scale effects, year badges, and technology tags for project portfolios.
+
+### Basic Usage
+
+```tsx
+<ProjectCard
+  title="Design System"
+  description="Built a comprehensive component library serving 50+ products."
+/>
+```
+
+### With Year and Tags
+
+```tsx
+<ProjectCard
+  title="Analytics Dashboard"
+  description="Real-time analytics platform processing 1M+ events per day."
+  year="2024"
+  tags={["React", "Node.js", "PostgreSQL"]}
+/>
+```
+
+### Sizes
+
+**Small:**
+```tsx
+<ProjectCard
+  size="small"
+  title="API Gateway"
+  description="Microservices gateway with auth and rate limiting."
+  year="2024"
+/>
+```
+Compact card for sidebars or dense grids.
+
+**Medium (Default):**
+```tsx
+<ProjectCard
+  size="medium"
+  title="Content Management"
+  description="Headless CMS with workflow engine for editorial teams."
+  year="2023"
+/>
+```
+Standard size for most grid layouts.
+
+**Large:**
+```tsx
+<ProjectCard
+  size="large"
+  title="Machine Learning Pipeline"
+  description="End-to-end ML pipeline for training and deploying models at scale."
+  year="2025"
+/>
+```
+Larger card for featured projects or hero sections.
+
+### Variants
+
+**Default:**
+```tsx
+<ProjectCard
+  variant="default"
+  title="Project Title"
+  description="Card background with subtle hover effect."
+/>
+```
+Standard card background with hover state.
+
+**Outline:**
+```tsx
+<ProjectCard
+  variant="outline"
+  title="Project Title"
+  description="Muted background with outline styling."
+/>
+```
+Lighter, more subtle appearance.
+
+**Filled:**
+```tsx
+<ProjectCard
+  variant="filled"
+  title="Project Title"
+  description="Filled muted background."
+/>
+```
+More prominent background color.
+
+### Interactive Effects
+
+**On Hover:**
+1. **Scale up**: Card grows to 105% size
+2. **Lift**: Translates up by 1px
+3. **Shadow**: Inner shadow becomes more prominent with outer shadow
+4. **Background tint**: Background gains maroon tint (secondary/10-15%)
+5. **Title color**: Title text changes to maroon
+6. **Z-index bump**: Card rises above siblings
+
+All effects transition smoothly over 300ms.
+
+### In Grid Layout
+
+**4-Column Grid:**
+```tsx
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  <ProjectCard
+    title="Project 1"
+    description="First project..."
+    year="2024"
+    tags={["React", "TypeScript"]}
+  />
+  {/* More cards... */}
+</div>
+```
+
+**3-Column Grid:**
+```tsx
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <ProjectCard
+    title="Design Systems"
+    description="Component libraries for enterprise."
+    year="2025"
+    tags={["React", "Figma"]}
+  />
+  {/* More cards... */}
+</div>
+```
+
+**Masonry Layout:**
+```tsx
+<div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+  <ProjectCard
+    className="mb-4 break-inside-avoid"
+    title="Project Title"
+    description="Description of varying lengths..."
+    year="2024"
+  />
+  {/* More cards... */}
+</div>
+```
+
+### Design Philosophy
+
+ProjectCard focuses on clean, minimal presentation:
+
+**Key Features:**
+- **Subtle hover effects** - Scale + lift + shadow for depth
+- **Lightweight styling** - Inset highlights, soft shadows
+- **Flexible sizing** - 3 size options for different layouts
+- **Optional metadata** - Year and tags are optional
+- **Typography hierarchy** - Bold title, muted description, tiny tags
+
+**Differences from CaseStudyCard:**
+- **Simpler**: No glass effects, no large background numbers
+- **Faster**: 300ms transitions (vs 500-1000ms)
+- **Lighter**: Subtle shadows and scale (vs dramatic transformations)
+- **Flexible**: 3 variants, 3 sizes for different contexts
+
+**When to use:**
+- Large project grids (4+ projects)
+- Portfolio pages with many items
+- Archive or index pages
+- When you want clean, scannable layouts
+
+**When to use CaseStudyCard instead:**
+- Featured projects (1-3 items)
+- Hero sections or landing pages
+- When you want premium, attention-grabbing presentation
+- Case studies that deserve dramatic treatment
+
+### Component Props
+
+**Required:**
+- `title` (string) - Project title
+- `description` (string) - Project description
+
+**Optional:**
+- `year` (string) - Display year in top corner
+- `tags` (string[]) - Technology tags shown at bottom
+- `size` ("small" | "medium" | "large") - Card size, defaults to "medium"
+- `variant` ("default" | "outline" | "filled") - Background style
+- `className` (string) - Additional CSS classes
+
+### Usage Guidelines
+
+**Best practices:**
+- Use in grids of 4+ cards for best visual balance
+- Keep descriptions concise (1-2 sentences)
+- Limit tags to 2-4 technologies
+- Use consistent sizing within the same grid
+- Mix variants for visual interest
+- Use small size for dense layouts (8+ cards)
+- Use large size for featured sections (3-4 cards)
+
+**Layout recommendations:**
+- **Small grids (4-8 cards)**: Use medium size, gap-6
+- **Large grids (9+ cards)**: Use small size, gap-4
+- **Featured grids (2-4 cards)**: Use large size, gap-8-12
+- **Masonry**: Mix sizes, use break-inside-avoid
+
+---
+
+## 🎨 Collage Component
+
+Flexible masonry grid layout system for organizing cards and mixed content with optional section headers and footers.
+
+### Basic Usage with ProjectCards
+
+```tsx
+import { Collage } from "@/app/components/ui/collage";
+import { ProjectCard } from "@/app/components/ui/project-card";
+
+const items = [
+  {
+    type: "content",
+    content: (
+      <ProjectCard
+        title="Design System"
+        description="Component library serving 50+ products."
+        year="2025"
+        tags={["React", "TypeScript"]}
+      />
+    ),
+  },
+  {
+    type: "content",
+    content: (
+      <ProjectCard
+        title="Analytics Platform"
+        description="Real-time dashboard processing events."
+        year="2024"
+        tags={["React", "Node.js"]}
+      />
+    ),
+  },
+  // More items...
+];
+
+<Collage
+  title="All Projects"
+  subtitle="Selected work from 2023-2025"
+  items={items}
+  columns={{ mobile: 1, tablet: 2, desktop: 4 }}
+  gap={4}
+/>
+```
+
+### With Section Headers
+
+```tsx
+const items = [
+  {
+    type: "header",
+    title: "Current Work",
+    subtitle: "2024-2025",
+  },
+  {
+    type: "content",
+    content: <ProjectCard title="..." description="..." />,
+  },
+  {
+    type: "content",
+    content: <ProjectCard title="..." description="..." />,
+  },
+  {
+    type: "header",
+    title: "Past Projects",
+    subtitle: "2022-2023",
+  },
+  {
+    type: "content",
+    content: <ProjectCard title="..." description="..." />,
+  },
+];
+
+<Collage items={items} columns={{ mobile: 1, tablet: 2, desktop: 2 }} gap={6} />
+```
+
+Headers automatically span the full width with centered title and decorative lines.
+
+### Column Spans
+
+Make items span multiple columns or rows:
+
+```tsx
+const items = [
+  {
+    type: "content",
+    content: <div>Featured content</div>,
+    colSpan: "col-span-2 row-span-2", // Takes 2x2 grid space
+  },
+  {
+    type: "content",
+    content: <div>Regular item</div>,
+    // No colSpan = defaults to col-span-1
+  },
+];
+```
+
+### With Footer
+
+```tsx
+<Collage
+  items={items}
+  gap={4}
+  footer={
+    <div className="text-center pt-8">
+      <Button variant="secondary">View All Projects →</Button>
+    </div>
+  }
+/>
+```
+
+### Column Configuration
+
+**Default:**
+```tsx
+columns={{ mobile: 2, tablet: 4, desktop: 6 }}
+```
+
+**Custom:**
+```tsx
+// 1 column mobile, 3 tablet, 5 desktop
+columns={{ mobile: 1, tablet: 3, desktop: 5 }}
+
+// Equal columns across all breakpoints
+columns={{ mobile: 3, tablet: 3, desktop: 3 }}
+```
+
+### Gap Options
+
+```tsx
+gap={0}  // No gap (tiles)
+gap={2}  // Tight spacing (8px)
+gap={4}  // Standard spacing (16px)
+gap={6}  // Generous spacing (24px)
+gap={8}  // Extra spacing (32px)
+```
+
+### Mixed Content
+
+Collage accepts any ReactNode as content:
+
+```tsx
+const items = [
+  {
+    type: "content",
+    content: <ProjectCard title="..." />,
+  },
+  {
+    type: "content",
+    content: (
+      <div className="bg-secondary p-8 flex items-center justify-center">
+        <h3 className="text-2xl font-black">Custom Content</h3>
+      </div>
+    ),
+  },
+  {
+    type: "content",
+    content: <CaseStudyCard title="..." description="..." />,
+  },
+  {
+    type: "content",
+    content: (
+      <div className="bg-muted p-4">
+        <Badge variant="secondary">Featured</Badge>
+        <p className="text-sm mt-2">Any content works</p>
+      </div>
+    ),
+  },
+];
+```
+
+### Design Philosophy
+
+**Purpose:**
+The Collage component provides a flexible grid system for organizing heterogeneous content - projects, stats, custom blocks, and section headers - in a responsive masonry layout.
+
+**Key Features:**
+- **Responsive grid** - Different column counts per breakpoint
+- **Section headers** - Full-width dividers with centered titles
+- **Flexible items** - Mix ProjectCards, custom content, stats, etc.
+- **Column spanning** - Items can span multiple columns/rows
+- **Dense packing** - `grid-auto-flow: dense` fills gaps efficiently
+- **Optional footer** - Add CTAs or additional content at bottom
+
+**When to use:**
+- Project portfolio pages with many items
+- Mixed content showcases (projects + stats + custom blocks)
+- Archive or index pages with sections
+- Any grid layout that needs section headers
+- Responsive masonry layouts
+
+### Component Props
+
+**Required:**
+- `items` (CollageItem[]) - Array of content or header items
+
+**Optional:**
+- `title` (string) - Page/section title above the grid
+- `subtitle` (string) - Subtitle/description below title
+- `footer` (ReactNode) - Content displayed below the grid
+- `columns` (object) - Column count per breakpoint
+  - `mobile` (number) - Columns on mobile (default: 2)
+  - `tablet` (number) - Columns on tablet (default: 4)
+  - `desktop` (number) - Columns on desktop (default: 6)
+- `gap` (number) - Tailwind gap value (0, 2, 4, 6, 8) (default: 0)
+- `className` (string) - Additional CSS classes
+
+**Item Types:**
+
+**Content Item:**
+```tsx
+{
+  type: "content",
+  content: ReactNode,        // Any React content
+  colSpan?: string,          // Optional: "col-span-2 row-span-2"
+}
+```
+
+**Header Item:**
+```tsx
+{
+  type: "header",
+  title: string,             // Header text
+  subtitle?: string,         // Optional subtitle
+}
+```
+
+### Usage Guidelines
+
+**Best practices:**
+- Use 4-6 columns on desktop for dense layouts
+- Use 1-2 columns on mobile to maintain readability
+- Add section headers to break up large grids (10+ items)
+- Use `colSpan` sparingly for featured items
+- Keep gap consistent within a layout
+- Use footer for CTAs or additional navigation
+
+**Layout recommendations:**
+- **Project portfolios**: mobile: 1, tablet: 2, desktop: 4, gap: 4-6
+- **Dense grids**: mobile: 2, tablet: 4, desktop: 6, gap: 2-4
+- **Featured sections**: mobile: 1, tablet: 2, desktop: 3, gap: 6-8
+- **Masonry**: Vary colSpan across items for visual interest
+
+**Content mixing:**
+- Combine ProjectCards with stats blocks
+- Add CaseStudyCards as featured (col-span-2) items
+- Include custom promotional content
+- Mix card sizes and variants for visual variety
+
+### Examples
+
+**Portfolio with Sections:**
+```tsx
+<Collage
+  title="All Work"
+  subtitle="2020-2025"
+  items={[
+    { type: "header", title: "Recent", subtitle: "2024-2025" },
+    { type: "content", content: <ProjectCard ... /> },
+    { type: "content", content: <ProjectCard ... /> },
+    { type: "header", title: "Archive", subtitle: "2020-2023" },
+    { type: "content", content: <ProjectCard ... /> },
+  ]}
+  columns={{ mobile: 1, tablet: 2, desktop: 4 }}
+  gap={4}
+  footer={<Button>View More</Button>}
+/>
+```
 
 ---
 

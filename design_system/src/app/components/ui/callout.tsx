@@ -9,7 +9,7 @@ const calloutVariants = cva(
       variant: {
         default: "bg-background text-foreground border-foreground",
         info: "bg-background text-foreground border-foreground border-l-[6px]",
-        warning: "bg-background text-secondary border-secondary border-l-[6px]",
+        warning: "bg-background text-foreground border-warning border-l-[6px]",
         error: "bg-secondary text-secondary-foreground border-secondary",
         success: "bg-foreground text-background border-foreground",
       },
@@ -27,7 +27,25 @@ const calloutIconVariants = cva(
       variant: {
         default: "text-foreground",
         info: "text-foreground",
-        warning: "text-secondary",
+        warning: "text-warning",
+        error: "text-secondary-foreground",
+        success: "text-background",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
+
+const calloutTitleVariants = cva(
+  "font-bold text-base mb-1 uppercase tracking-wide",
+  {
+    variants: {
+      variant: {
+        default: "text-foreground",
+        info: "text-foreground",
+        warning: "text-warning",
         error: "text-secondary-foreground",
         success: "text-background",
       },
@@ -72,7 +90,7 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
           )}
           <div className="flex-1">
             {title && (
-              <div className="font-bold text-base mb-1 uppercase tracking-wide">
+              <div className={cn(calloutTitleVariants({ variant }))}>
                 {title}
               </div>
             )}
