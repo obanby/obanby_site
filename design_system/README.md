@@ -78,8 +78,9 @@ This design system blends two seemingly opposing philosophies:
 
 #### **Accent Colors** (Use Sparingly - Max 5% of Any Page)
 ```css
---accent-red: #DC0D28   /* Passion, urgency, key actions */
---accent-blue: #4040FF  /* Technical, creative, secondary actions */
+--accent-red: #DC0D28     /* Passion, urgency, key actions */
+--accent-blue: #4040FF    /* Technical, creative, secondary actions */
+--accent-yellow: #FFF59D  /* Highlighter pen style, text emphasis */
 ```
 
 **Philosophy**: Accents are punctuation, not sentences. A single red word in a black headline is more impactful than a red paragraph.
@@ -87,7 +88,8 @@ This design system blends two seemingly opposing philosophies:
 **Usage Guidelines:**
 - Red: CTAs, warnings, emphasis on critical info
 - Blue: Links, technical terms, secondary actions
-- Never use both accents in the same component unless necessary
+- Yellow: Text highlighting, inline emphasis, key terms
+- Use sparingly - each accent should appear in less than 5% of the page
 
 #### **Dark Mode** (Full Support)
 ```css
@@ -302,6 +304,8 @@ function Component({ className, variant, ...props }) {
 - `CTASection` - Newsletter signup with form
 - `CodeBlock` - Code display with syntax highlighting, line numbers, and language labels
 - `Callout` - Info/warning/error blocks with icons and variants
+- `Highlighter` - Inline text highlighting with yellow background for emphasis
+- `Link` - Text links with hover states, arrows, and color variants
 
 ### Radix UI Components (50+)
 
@@ -518,6 +522,269 @@ Callouts follow the brutalist-minimal aesthetic:
   <p>Continue with the setup...</p>
 </article>
 ```
+
+---
+
+## 🎨 Highlighter Component
+
+Inline text highlighting with yellow background for visual emphasis.
+
+### Basic Usage
+
+```tsx
+<p>
+  This is a paragraph with <Highlighter>highlighted text</Highlighter> in the middle.
+</p>
+```
+
+### In Headings
+
+```tsx
+<h1>
+  Building <Highlighter>Design Systems</Highlighter> That Scale
+</h1>
+```
+
+### Multiple Highlights
+
+```tsx
+<p>
+  You can use <Highlighter>multiple highlights</Highlighter> to emphasize
+  <Highlighter>different concepts</Highlighter> throughout your content.
+</p>
+```
+
+### Design Philosophy
+
+The Highlighter component follows the brutalist-minimal aesthetic:
+- **Highlighter yellow background** (`#FFF59D`) - Softer yellow like a real highlighter pen
+- **Minimal padding** - Just enough to separate from surrounding text
+- **Sharp corners** - No border radius
+- **Inline display** - Flows naturally with text
+
+### Usage Guidelines
+
+**When to use:**
+- Emphasize key terms or concepts
+- Draw attention to important words in long text
+- Create visual hierarchy in articles
+- Highlight definitions or technical terms
+
+**Best practices:**
+- Use sparingly (2-3 highlights per paragraph maximum)
+- Highlight short phrases, not entire sentences
+- Don't overuse - too much yellow reduces impact
+- Maintain readability with black text on yellow
+
+### Custom Styling
+
+```tsx
+<Highlighter className="font-bold">
+  Bold highlight
+</Highlighter>
+
+<Highlighter className="px-2 py-1">
+  More padding
+</Highlighter>
+```
+
+### In Articles
+
+```tsx
+<article className="container-reading space-y-6">
+  <h1>The Power of Visual Emphasis</h1>
+
+  <p>
+    Studies show that <Highlighter>visual emphasis</Highlighter> helps readers
+    quickly identify and remember important information.
+  </p>
+
+  <p>
+    When scanning long articles, highlighted text acts as
+    <Highlighter>visual anchors</Highlighter> that guide the reader's attention.
+  </p>
+</article>
+```
+
+### Accessibility
+
+- Maintains high contrast ratio (black text on yellow)
+- Semantic HTML (uses `<span>` element)
+- Works with screen readers
+- Doesn't interfere with text selection
+
+---
+
+## 🔗 Link Component
+
+Text links with hover states, optional arrows, and color variants for navigation and CTAs.
+
+### Basic Usage
+
+```tsx
+<Link href="#">Default link</Link>
+```
+
+### With Arrow
+
+```tsx
+<Link href="#" arrow>
+  or see what I'm working on
+</Link>
+```
+
+The arrow is perfect for CTAs and "read more" style links.
+
+### Variants
+
+**Default:**
+```tsx
+<Link href="#" variant="default">
+  Hover for gray text
+</Link>
+```
+Black text that turns gray on hover.
+
+**Accent (Red):**
+```tsx
+<Link href="#" variant="accent">
+  Hover for red
+</Link>
+```
+Black text that turns red on hover - perfect for important links.
+
+**Muted:**
+```tsx
+<Link href="#" variant="muted">
+  Starts gray
+</Link>
+```
+Gray text that turns black on hover.
+
+**Blue:**
+```tsx
+<Link href="#" variant="blue">
+  Blue link
+</Link>
+```
+Blue text throughout - great for external links or social media.
+
+**Red:**
+```tsx
+<Link href="#" variant="red">
+  Red link
+</Link>
+```
+Red text throughout - for warnings or destructive actions.
+
+### Sizes
+
+```tsx
+<Link href="#" size="sm">Small (14px)</Link>
+<Link href="#" size="default">Default (16px)</Link>
+<Link href="#" size="lg">Large (18px)</Link>
+```
+
+### Underline Options
+
+```tsx
+<Link href="#" underline="none">No underline</Link>
+<Link href="#" underline="hover">Underline on hover</Link>
+<Link href="#" underline="always">Always underlined</Link>
+```
+
+### In Context
+
+**In Paragraphs:**
+```tsx
+<p>
+  Want to learn more?{" "}
+  <Link href="#" variant="accent">
+    Read the full guide
+  </Link>{" "}
+  or{" "}
+  <Link href="#" arrow>
+    see related articles
+  </Link>
+  .
+</p>
+```
+
+**Navigation:**
+```tsx
+<nav className="space-y-3">
+  <Link href="#" variant="default">Writing</Link>
+  <Link href="#" variant="accent">Projects</Link>
+  <Link href="#" variant="blue">About</Link>
+</nav>
+```
+
+**Footer:**
+```tsx
+<footer>
+  <h4>Social</h4>
+  <Link href="#" variant="blue">Twitter</Link>
+  <Link href="#" variant="blue">GitHub</Link>
+  <Link href="#" variant="blue">LinkedIn</Link>
+</footer>
+```
+
+**CTAs:**
+```tsx
+<Link href="#" size="lg" variant="accent" arrow>
+  Get started now
+</Link>
+
+<Link href="#" variant="default" arrow>
+  or see what I'm working on
+</Link>
+```
+
+### External Links
+
+```tsx
+<Link
+  href="https://example.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  variant="blue"
+>
+  External resource
+</Link>
+```
+
+### Design Philosophy
+
+The Link component follows brutalist-minimal principles:
+- **No border by default** - Clean, uncluttered appearance
+- **Subtle hover states** - Color transitions instead of underlines
+- **Optional arrows** - Directional indicators for CTAs
+- **Color variants** - Different semantic meanings (accent=important, blue=external, muted=secondary)
+
+### Usage Guidelines
+
+**When to use each variant:**
+- **Default**: General in-content links, navigation
+- **Accent**: Important CTAs, featured links, "read more"
+- **Muted**: Secondary links, footer links, less important actions
+- **Blue**: External links, social media, technical references
+- **Red**: Warnings, destructive actions, urgent links
+
+**Best practices:**
+- Use arrows for CTAs and directional links
+- Keep underlines off by default for cleaner look
+- Use `underline="hover"` for traditional link behavior
+- Match link color to context (blue for social, red for warnings)
+- Don't mix too many variants on one page
+
+### Accessibility
+
+- Semantic `<a>` element with proper href
+- Keyboard navigable
+- Focus states included
+- High contrast ratios maintained
+- Works with screen readers
+- Supports all standard link attributes (target, rel, etc.)
 
 ---
 

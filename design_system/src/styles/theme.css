@@ -33,7 +33,11 @@
   /* Accent Blue - Creative highlights */
   --accent-blue: #4040FF;
   --accent-blue-foreground: #FFFFFF;
-  
+
+  /* Accent Yellow - Highlights and emphasis (highlighter pen style) */
+  --accent-yellow: #FFF59D;
+  --accent-yellow-foreground: #000000;
+
   /* Accent - Default to subtle */
   --accent: #F5F5F5;
   --accent-foreground: #000000;
@@ -125,7 +129,10 @@
   
   --accent-blue: #5E5EFF;
   --accent-blue-foreground: #FFFFFF;
-  
+
+  --accent-yellow: #FFF59D;
+  --accent-yellow-foreground: #000000;
+
   --accent: #1A1A1A;
   --accent-foreground: #FFFFFF;
   
@@ -167,6 +174,8 @@
   --color-accent-red-foreground: var(--accent-red-foreground);
   --color-accent-blue: var(--accent-blue);
   --color-accent-blue-foreground: var(--accent-blue-foreground);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-yellow-foreground: var(--accent-yellow-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
